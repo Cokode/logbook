@@ -7,7 +7,7 @@ const dog = {
 const display = (dog) => {
 
     return `
-        <div id="dog-div">
+        <div class="container">
             <ul>
                 <li>Name: ${dog.name}</li>
                 <li>Age: ${dog.age}</li>
