@@ -1,0 +1,28 @@
+{
+  "name": "logbook",
+  "version": "1.0.0",
+  "description": "A web logbook to log information like sales records.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Cokode/logbook.git"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "logbook",
+    "data",
+    "JavaScript",
+    "frontend"
+  ],
+  "author": "Collins Chinedu Amalimeh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cokode/logbook/issues"
+  },
+  "homepage": "https://github.com/Cokode/logbook#readme"
+}
