@@ -1,7 +1,10 @@
 .frame {
-background-color: rgb(216, 179, 202);
-margin: 200px;
-border: 1px solid #ccc;
+background-color:#333c1f;
+margin-left: 320px;
+margin-right: 320px;
+margin-top: 130px;
+margin-bottom: 20px;
+border: 1px solid #b4c4ad;
 border-radius: 5px;
 padding-top: 2px;
 padding-bottom: 29px;
@@ -14,7 +17,7 @@ line-height: 1.5;
 
 .card {
   float: center;
-  background-color: rgb(236, 240, 238);
+  background-color: rgb(93, 126, 109);
   margin-left: 200px;
   margin-right: 200px;
   margin-top: 50px;
@@ -24,9 +27,28 @@ line-height: 1.5;
   text-align: center;
   padding-bottom: 20px;
   font-family:'Arial Narrow', sans-serif ;
+  font-size: medium;
 }
 
-.button:hover {
-  background-color: rgb(204, 118, 13);
-  padding: 5px;
+.button {
+  background-color: rgb(204, 187, 166);
+  padding: 6px;
+  border-radius: 6px;
+  margin: 6px;
 }
+
+#buy {
+  font-family:monospace;
+  color: green;
+  font-size: 18px;
+  font-weight:500;
+
+} 
+
+#sell {
+  font-family: monospace;
+  color: red;
+  font-size: 18px;
+  font-weight:500;
+
+} 

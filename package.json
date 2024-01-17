@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/",
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint ." 
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/Cokode/logbook/issues"
   },
-  "homepage": "https://github.com/Cokode/logbook#readme"
+  "homepage": "https://github.com/Cokode/logbook#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0"
+  }
 }
