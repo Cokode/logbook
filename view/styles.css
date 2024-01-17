@@ -1,4 +1,4 @@
-.frame {
+/* .frame {
 background-color:#333c1f;
 margin-left: 320px;
 margin-right: 320px;
@@ -13,6 +13,24 @@ padding-right: 2px;
 text-align: center;
 font-size: large;
 line-height: 1.5;
+} */
+
+.frame {
+  width: 100%; /* Set width to 100% */
+  max-width: 600px; /* Set a maximum width if needed */
+  margin: 0 auto; /* Center the div horizontally */
+  padding: 5px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  background-color:#333c1f;
+  }
+  
+  /* Media query for responsiveness */ 
+  
+  @media (max-width: 768px) {
+  .frame {
+  max-width: 100%; /* Adjust max-width for smaller screens */
+  }
+  
 }
 
 .card {
@@ -35,6 +53,7 @@ line-height: 1.5;
   padding: 6px;
   border-radius: 6px;
   margin: 6px;
+  border-color: whitesmoke;
 }
 
 #buy {
@@ -52,3 +71,18 @@ line-height: 1.5;
   font-weight:500;
 
 } 
+
+input {
+  width: 120px; /* Set the width of the input field */
+  padding: 4px; /* Set padding for better visual appearance */
+  text-align: center; /* Set text alignment to center */
+  font-size: 18px; /* Set font size */
+  margin-bottom: 55px;
+}
+
+/* Styling the placeholder text */
+input::placeholder {
+  text-align: center; /* Align placeholder text to center */
+  color: #999; /* Set placeholder text color */
+  font-size: 14px; /* Set placeholder text font size */
+}
