@@ -1,27 +1,3 @@
-const dog = {
-    name: "collins",
-    age:50,
-    color:"brown"
-}
- 
-const display = (dog) => {
+document.body.style.backgroundColor = "#48111a";
 
-    return `
-        <div class="container">
-            <ul>
-                <li>Name: ${dog.name}</li>
-                <li>Age: ${dog.age}</li>
-                <li>Color: ${dog.color}</li>
-            </ul>
-        </dvi>
-    `;
-}
-
-console.log(display(dog));
-
-const bod = document.createElement('article');
-bod.innerHTML = display(dog);
-
-document.body.appendChild(bod);
-document.body.style.backgroundColor = "#f0ece2";
-
+//<img src="/view/images/dog.jpg" width="340" height="270"></img>

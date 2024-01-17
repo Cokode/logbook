@@ -1,4 +1,32 @@
-.card {
-background-color: aquamarine;
+.frame {
+background-color: rgb(216, 179, 202);
+margin: 200px;
+border: 1px solid #ccc;
+border-radius: 5px;
+padding-top: 2px;
+padding-bottom: 29px;
+padding-left: 2px;
+padding-right: 2px;
+text-align: center;
+font-size: large;
+line-height: 1.5;
+}
 
+.card {
+  float: center;
+  background-color: rgb(236, 240, 238);
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border: 2px solid #eeebeb;
+  border-radius: 10px;
+  text-align: center;
+  padding-bottom: 20px;
+  font-family:'Arial Narrow', sans-serif ;
+}
+
+.button:hover {
+  background-color: rgb(204, 118, 13);
+  padding: 5px;
 }
