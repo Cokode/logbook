@@ -1,11 +1,29 @@
 export function changeButtonColor() {
-  document.getElementById('buy').addEventListener("mouseover", function() {
+  let buy = document.querySelector('#buy');
+  let sell = document.getElementById('sell');
 
-    this.style.color = "white";
-    this.style.backgroundColor = "green";
+  if (buy) {
+    buy.addEventListener("mouseover", function() {
+      buy.style.color = "white";
+      buy.style.backgroundColor = "green";
+    });
 
-    
-  }); // assuming 'buy' is an ID, so use '#'
-  //let buttonRed = document.querySelector('sell'); // assuming 'sell' is an ID, so use '#'
+    buy.addEventListener("mouseout", function() {
+      buy.style.color = ""; // Reset to default color
+      buy.style.backgroundColor = ""; // Reset to default background color
+    });
+  }
 
+  if (sell) {
+    sell.addEventListener("mouseover", function() {
+      sell.style.color = "white";
+      sell.style.backgroundColor = "#da422e";
+
+    });
+
+    sell.addEventListener("mouseout", function() {
+      sell.style.color = "red"; // Reset to default color
+      sell.style.backgroundColor = "white"; // Reset to default background color
+    });
+  }
 }
