@@ -1,3 +1,38 @@
+.main-header {
+  background-color: #08071a8e;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color:#5781b1
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+
+
 /* .frame {
 background-color:#333c1f;
 margin-left: 320px;
@@ -21,20 +56,25 @@ line-height: 1.5;
   margin: 0 auto; /* Center the div horizontally */
   padding: 5px;
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  background-color:#333c1f;
-  }
+  background-color:#1a4a7e;
+  border-radius: 12px;
+  border-color: #90c226;
+  border-width: 5550px;
+  background-blend-mode:hard-light;
+
+}
   
   /* Media query for responsiveness */ 
   
   @media (max-width: 768px) {
-  .frame {
-  max-width: 100%; /* Adjust max-width for smaller screens */
+    .frame {
+    max-width: 100%; /* Adjust max-width for smaller screens */
+    }
+    
   }
-  
-}
 
 .card {
-  float: center;
+  /* float: center;
   background-color: rgb(93, 126, 109);
   margin-left: 200px;
   margin-right: 200px;
@@ -45,11 +85,36 @@ line-height: 1.5;
   text-align: center;
   padding-bottom: 20px;
   font-family:'Arial Narrow', sans-serif ;
-  font-size: medium;
+  font-size: medium; */
+
+  width: 50%; /* Set width to 100% */
+  max-width: 300px; /* Set a maximum width if needed */
+  margin: 0 auto; /* Center the div horizontally */
+  padding: 5px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  background-color:#020918c2;
+  box-shadow: 1px 1px 1px 2px rgba(228, 222, 222, 0.205);
+  border-radius: 8px;
+  border-color: white;
+  border-width: 4px;
+  text-align: center;
+  font-family:'Arial Narrow', sans-serif ;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  color: white;
+  }
+  
+  /* Media query for responsiveness */ 
+  
+  @media (max-width: 768px) {
+  .frame {
+  max-width: 100%; /* Adjust max-width for smaller screens */
+  }
+
 }
 
 .button {
-  background-color: rgb(204, 187, 166);
+  background-color: rgb(255, 255, 255);
   padding: 6px;
   border-radius: 6px;
   margin: 6px;
