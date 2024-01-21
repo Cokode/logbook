@@ -142,3 +142,7 @@ input::placeholder {
   color: #999; /* Set placeholder text color */
   font-size: 14px; /* Set placeholder text font size */
 }
+
+.error {
+  border: 1px solid red;
+}
