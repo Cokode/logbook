@@ -1,6 +1,7 @@
 import { changeButtonColor } from "./controller/changebuttoncolor.js";
 import onclickBuyButton from "./controller/inputData.js";
 import { onclickSellButton } from "./controller/inputData.js";
+import {logHistory}  from "./view/history.js";
 
 
 const historyRequest = () => {
@@ -16,7 +17,7 @@ const postBuy = (url, info) => {
 	fetch(url, {
 	method:	'POST',
 	headers: {
-		'Content-Type': 'application/json'
+		'Content-Type': 'application/json, application/text',
 	},
 		body: JSON.stringify(info)
 	})
@@ -24,12 +25,24 @@ const postBuy = (url, info) => {
 	.then(Response => Response.json())
 	.then(data => console.log(data))
 	.catch(error => console.log('Error', error));
-
 }
 
 onclickBuyButton(postBuy);
 onclickSellButton(postBuy);
+logHistory();
 
+
+
+
+//historEntry.innerHTML = `Amount: ${key.amount} | Type: ${key.logType} | Date: ${key.date} | Time: ${key.time} | ID: ${key.id}`;
+
+
+
+	
+	
+	
+	
+	
 
 historyRequest();
 changeButtonColor();
