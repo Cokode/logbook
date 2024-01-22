@@ -6,13 +6,13 @@ import { onclickSellButton } from "./controller/inputData.js";
 const historyRequest = () => {
 	let data = fetch('http://localhost:8080/get');
 
-	data.then(Response => Response.text())
+	data.then(Response => Response.json())
 	.then(dada => console.log(dada))
 	.catch(error => console.
 		error('Error making GET request', error));
 }
 
- const postBuy = (url, info) => {
+const postBuy = (url, info) => {
 	fetch(url, {
 	method:	'POST',
 	headers: {

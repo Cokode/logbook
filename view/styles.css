@@ -128,12 +128,20 @@ line-height: 1.5;
   font-weight:500;
 } 
 
+#logbook:hover {
+  color:#ffcc00;
+}
+
 input {
   width: 120px; /* Set the width of the input field */
   padding: 4px; /* Set padding for better visual appearance */
   text-align: center; /* Set text alignment to center */
   font-size: 18px; /* Set font size */
   margin-bottom: 55px;
+}
+
+input:hover {
+  background-color: #7bdef7;
 }
 
 /* Styling the placeholder text */
@@ -145,4 +153,9 @@ input::placeholder {
 
 .error {
   border: 1px solid red;
+  background-color: #7bdef7;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: red;
+  font-size: 16px;
+  text-decoration: wavy;
 }
