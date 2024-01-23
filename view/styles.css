@@ -159,3 +159,7 @@ input::placeholder {
   font-size: 16px;
   text-decoration: wavy;
 }
+
+#history-class:hover {
+  background-color: #90c226;
+}

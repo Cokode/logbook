@@ -6,15 +6,20 @@ export const logHistory = async () => {
       const datat = await response.json(); // Assuming the data is in JSON format
       
       const sec = document.querySelector("#history-class");
+      sec.style.backgroundColor = "white";
   
+      const historHead = `Date and Time       |       Type       |      Amount      | `;
+      console.log(historHead);
+
+      document.getElementById("log-title").append(historHead);
+
+
       for (var data of datat) {
         const historyEntry = document.createElement("p");
-      const div = document.createElement("div");
+        const div = document.createElement("div");
 
-
-        historyEntry.textContent = `Amount: ${data.amount} | 
-        Type: ${data.logType} | Date: ${data.date} | 
-        Time: ${data.time} | ID: ${data.id}`;
+        historyEntry.textContent = `${data.amount} | 
+        ${data.logType} | ${data.date} | ${data.time} | `;
 
         div.append(historyEntry);
         sec.appendChild(div);
@@ -23,6 +28,9 @@ export const logHistory = async () => {
       console.error('Error fetching data:', error);
     }
   };
+
+  
+
 
 
   //  // Now 'data' is an array of objects, and you can iterate over it

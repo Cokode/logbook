@@ -17,7 +17,7 @@ const postBuy = (url, info) => {
 	fetch(url, {
 	method:	'POST',
 	headers: {
-		'Content-Type': 'application/json, application/text',
+		'Content-Type': 'application/json',
 	},
 		body: JSON.stringify(info)
 	})
