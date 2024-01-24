@@ -5,24 +5,33 @@ export const logHistory = async () => {
       const response = await fetch('http://localhost:8080/get');
       const datat = await response.json(); // Assuming the data is in JSON format
       
-      const sec = document.querySelector("#history-class");
-      sec.style.backgroundColor = "white";
+      // const sectionMain = document.querySelector("#section-main-history");
+      // sectionMain.style.backgroundColor = "white";
   
-      const historHead = `Date and Time       |       Type       |      Amount      | `;
-      console.log(historHead);
+      const table = document.getElementById("transaction-section");
 
-      document.getElementById("log-title").append(historHead);
-
-
+    
+ 
       for (var data of datat) {
-        const historyEntry = document.createElement("p");
-        const div = document.createElement("div");
+       const title_frame = document.createElement("div"); // frame state
+       title_frame.className = "transaction_frame";
 
-        historyEntry.textContent = `${data.amount} | 
-        ${data.logType} | ${data.date} | ${data.time} | `;
+       const date_time = document.createElement("div");
+       date_time.id = "float-box";
+       date_time.textContent = `${data.date} ${data.time}`
 
-        div.append(historyEntry);
-        sec.appendChild(div);
+       const type = document.createElement("div");
+       type.id = "float-box";
+       type.textContent = data.logType;
+
+       const amount = document.createElement("div");
+       amount.id = "float-box"; // frame end
+       amount.textContent = data.amount;
+
+       title_frame.append(date_time, type, amount);
+
+       table.append(title_frame);
+  
       }
     } catch (error) {
       console.error('Error fetching data:', error);
