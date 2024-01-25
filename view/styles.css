@@ -189,3 +189,36 @@ input::placeholder {
   text-align: left;
   border-radius: 5px;
 }
+
+#title-section { /*  section for history title*/
+  background-color: #ffcc00;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.title-frame::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.title-frame {
+  border: 2px solid #dbe4e0; /* Border thickness and color */
+  background-color: #dac0c0; /* Background color */
+  padding: 10px; /* Padding to create space inside the container */
+  box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+#float-box-frame {
+  width: 30%; /* Set the width as per your requirements */
+  float: left; /* Float the divs to the left */
+  margin: 10px; /* Add some margin between the divs */
+  background-color: #e0e0e0;
+  padding: 10px;
+  box-sizing: border-box; /* Include padding and border in the total width */
+  color: rgb(57, 14, 3);
+  text-align: left;
+  border-radius: 5px;
+  font-weight: bold;
+}

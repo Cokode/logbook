@@ -9,8 +9,7 @@ export const logHistory = async () => {
       // sectionMain.style.backgroundColor = "white";
   
       const table = document.getElementById("transaction-section");
-
-    
+      table.style.backgroundColor = "brown";
  
       for (var data of datat) {
        const title_frame = document.createElement("div"); // frame state
@@ -23,6 +22,14 @@ export const logHistory = async () => {
        const type = document.createElement("div");
        type.id = "float-box";
        type.textContent = data.logType;
+       type.style.fontWeight = "bold";
+
+       if (type.innerText == "BUY") {
+        type.style.color = "green";
+       } else {
+        type.style.color = "red";
+       }
+       
 
        const amount = document.createElement("div");
        amount.id = "float-box"; // frame end
