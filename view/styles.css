@@ -49,6 +49,11 @@ font-size: large;
 line-height: 1.5;
 } */
 
+#main-section{
+  margin-bottom: 20px;
+}
+
+
 .frame {
   width: 100%; /* Set width to 100% */
   max-width: 600px; /* Set a maximum width if needed */
@@ -221,4 +226,20 @@ input::placeholder {
   text-align: left;
   border-radius: 5px;
   font-weight: bold;
+}
+
+#history-div {
+  float: left;
+}
+
+#text-wrapper {
+  background-color: #dbe4e0;
+  border-radius: 5px;
+  padding: 0.0001em;
+  margin: 10px;
+}
+
+#history-text {
+  border-color: #90c226;
+  border-radius: 5px;
 }

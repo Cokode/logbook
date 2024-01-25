@@ -1,7 +1,8 @@
 import { changeButtonColor } from "./controller/changebuttoncolor.js";
 import onclickBuyButton from "./controller/inputData.js";
 import { onclickSellButton } from "./controller/inputData.js";
-import {logHistory}  from "./view/history.js";
+//import {logHistory}  from "./view/history.js";
+import historyclick from "./controller/click-history.js";
 
 
 const historyRequest = () => {
@@ -29,7 +30,8 @@ const postBuy = (url, info) => {
 
 onclickBuyButton(postBuy);
 onclickSellButton(postBuy);
-logHistory();
+//logHistory();
+historyclick();
 
 
 
