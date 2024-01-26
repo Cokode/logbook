@@ -48,7 +48,8 @@ historyclick();
 
 historyRequest();
 changeButtonColor();
-document.body.style.backgroundColor = "#5781b1";
+//document.body.style.backgroundColor = "#5781b1";
+document.body.style.backgroundColor = "#b6c8dc";
 
 
 

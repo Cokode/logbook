@@ -1,3 +1,6 @@
+import historyTitle from "../component/historyt-title-section.js";
+
+
 export const logHistory = async () => {
 
 
@@ -10,6 +13,9 @@ export const logHistory = async () => {
   
       const table = document.getElementById("transaction-section");
       table.style.backgroundColor = "brown";
+//abdulm97jr
+      const inneriew = historyTitle();
+      document.getElementById("outer-section").innerHTML = inneriew;
  
       for (var data of datat) {
        const title_frame = document.createElement("div"); // frame state
@@ -24,16 +30,20 @@ export const logHistory = async () => {
        type.textContent = data.logType;
        type.style.fontWeight = "bold";
 
+       const amount = document.createElement("div");
+       amount.id = "float-box"; // frame end
+
        if (type.innerText == "BUY") {
         type.style.color = "green";
+        amount.textContent = "+ " + data.amount;
        } else {
         type.style.color = "red";
+        amount.textContent = "- " + data.amount;
+        amount.style.color = "red";
        }
        
 
-       const amount = document.createElement("div");
-       amount.id = "float-box"; // frame end
-       amount.textContent = data.amount;
+      
 
        title_frame.append(date_time, type, amount);
 
