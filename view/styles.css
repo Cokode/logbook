@@ -254,3 +254,13 @@ input::placeholder {
   border-radius: 5px;
   background-color: #1a4a7e;
 }
+
+.footer {
+  background-color: #411f1ff8;   /* 08071a8e */
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100%;
+  margin-bottom: 0%;
+}

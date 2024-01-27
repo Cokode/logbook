@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha test/",
     "start": "node index.js",
-    "lint": "eslint ."
+    "lint": "eslint."
   },
   "repository": {
     "type": "git",
