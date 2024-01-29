@@ -51,6 +51,7 @@ line-height: 1.5;
 
 #main-section{
   margin-bottom: 70px;
+  padding: 0px;
 }
 
 .frame:hover{
@@ -105,7 +106,7 @@ line-height: 1.5;
   text-align: center;
   font-family:'Arial Narrow', sans-serif ;
   margin-top: 45px;
-  margin-bottom: 45px;
+  margin-bottom: 27px;
   color: white;
   }
   
@@ -234,14 +235,14 @@ input::placeholder {
 }
 
 #history-div {
-  float: left;
+  margin-top: 2%;
+  margin-left: 38%;
+  margin-bottom: 3%;
 }
 
 #text-wrapper {
-  background-color: #dbe4e0;
   border-radius: 5px;
   padding: 0;
-  margin: 10px;
 }
 
 #history-text {
