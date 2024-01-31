@@ -1,8 +1,15 @@
-import { changeButtonColor } from "./controller/changebuttoncolor.js";
-import onclickBuyButton from "./controller/inputData.js";
-import { onclickSellButton } from "./controller/inputData.js";
-//import {logHistory}  from "./view/history.js";
-import historyclick from "./controller/click-history.js";
+import express from 'express';
+const app = express();
+
+
+
+
+
+// import { changeButtonColor } from "./controller/changebuttoncolor.js";
+// import onclickBuyButton from "./controller/inputData.js";
+// import { onclickSellButton } from "./controller/inputData.js";
+// //import {logHistory}  from "./view/history.js";
+// import historyclick from "./controller/click-history.js";
 
 
 const historyRequest = () => {
@@ -35,14 +42,6 @@ historyclick();
 
 
 
-
-//historEntry.innerHTML = `Amount: ${key.amount} | Type: ${key.logType} | Date: ${key.date} | Time: ${key.time} | ID: ${key.id}`;
-
-
-
-	
-	
-	
 	
 	
 
@@ -54,3 +53,9 @@ document.body.style.backgroundColor = "#b6c8dc";
 
 
 //<img src="/view/images/dog.jpg" width="340" height="270"></img>
+
+
+const PORT = 5500;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
