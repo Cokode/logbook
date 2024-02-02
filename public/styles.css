@@ -11,7 +11,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color:#5781b1
+  /* background-color:#5781b1 */
+  background-color: whitesmoke;
 }
 
 .logo {
@@ -145,14 +146,14 @@ line-height: 1.5;
 
 input {
   width: 120px; /* Set the width of the input field */
-  padding: 4px; /* Set padding for better visual appearance */
+  padding: 6px; /* Set padding for better visual appearance */
   text-align: center; /* Set text alignment to center */
-  font-size: 18px; /* Set font size */
+  font-size: 20px; /* Set font size */
   margin-bottom: 55px;
 }
 
 input:hover {
-  background-color: #7bdef7;
+  background-color: #b8eccc;
 }
 
 /* Styling the placeholder text */
@@ -257,11 +258,113 @@ input::placeholder {
 }
 
 .footer {
-  background-color: #411f1ff8;   /* 08071a8e */
+  background-color:white;   /* 08071a8e */
   padding: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 100%;
   margin-bottom: 0%;
+  height: 150px;
 }
+
+
+/* CSS Style for home page / or /home */
+.home-section {
+  padding: 20px;
+
+}
+
+#appname {
+  color: red;
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+  margin-left: 14%;
+  float: left;
+  margin-top: 7%;
+  text-shadow: 2px 2px 4px #b4b2b2;
+}
+
+#home-statement {
+  color:green;
+  font: size 30px;
+  font-family:Arial, Helvetica, sans-serif; 
+  border-color:black;
+  margin-bottom: 20%;
+}
+
+#login-container {
+  padding: 10px; 
+  background-color:rgb(237, 236, 234); 
+  margin-top: 5%;
+  margin-right: 7%;
+  width: 400px;
+  float:right;
+  border-radius: 7px;
+}
+
+#inner-container {
+  padding-top: 15px;
+  padding-left: 32px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  background-color: white;
+  border-radius: 10px;
+  width: 380px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  align-content: center;
+}
+
+#username{
+  width: 350px;
+  margin-bottom: 17px;
+  display: block;
+  height: 30px;
+  border-radius: 5px inherit;
+}
+
+#username::placeholder {
+  font-size: 20px;
+  text-align: left;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-left: 10px;
+}
+
+#password{
+  width: 350px;
+  margin-bottom: 17px;
+  display: block;
+  height: 30px;
+  border-radius: 5px inherit;
+}
+
+#password::placeholder {
+  font-size: 20px;
+  text-align: left;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-left: 10px;
+}
+
+#submit {
+  border-radius: 5px;
+  width: auto;
+  margin-bottom: 17px;
+  height: 40px;
+  width: 200px;
+  background-color: green;
+  color: whitesmoke;
+}
+
+#submit:hover {
+  background-color: rgb(45, 186, 45);
+}
+
+#forgot-password > a{
+  font-family: Tahoma, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: green;
+}
+
+

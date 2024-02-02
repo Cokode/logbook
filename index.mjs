@@ -16,12 +16,12 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
 
-  res.render('home');
+  res.render('home', { layout: 'home-layout'});
 });
 
 app.get('/home', (req, res) => {
 
-  res.render('loggin-page');
+  res.render('home', { layout: 'home-layout'});
 });
 
 
@@ -40,11 +40,11 @@ async function result() {
 
 
 
-// import { changeButtonColor } from "./controller/changebuttoncolor.js";
-// import onclickBuyButton from "./controller/inputData.js";
-// import { onclickSellButton } from "./controller/inputData.js";
-// //import {logHistory}  from "./view/history.js";
-// import historyclick from "./controller/click-history.js";
+ //import { changeButtonColor } from "./controller/changebuttoncolor.js";
+ //import onclickBuyButton from "./controller/inputData.js";
+ //import { onclickSellButton } from "./controller/inputData.js";
+ //import {logHistory}  from "./view/history.js";
+ //import historyclick from "./controller/click-history.js";
 
 
 // const historyRequest = () => {
@@ -70,10 +70,10 @@ async function result() {
 // 	.catch(error => console.log('Error', error));
 // }
 
-// onclickBuyButton(postBuy);
-// onclickSellButton(postBuy);
-// //logHistory();
-// historyclick();
+ //onclickBuyButton(postBuy);
+ //onclickSellButton(postBuy);
+ //logHistory();
+ //historyclick();
 
 
 
@@ -81,7 +81,7 @@ async function result() {
 	
 
 // historyRequest();
-// changeButtonColor();
+ //changeButtonColor();
 // //document.body.style.backgroundColor = "#5781b1";
 // document.body.style.backgroundColor = "#b6c8dc";
 
