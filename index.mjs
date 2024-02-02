@@ -24,6 +24,11 @@ app.get('/home', (req, res) => {
   res.render('home', { layout: 'home-layout'});
 });
 
+app.get('/forgot-password', (req, res) => {
+
+  res.render('forgot-password', { layout: 'home-layout'});
+});
+
 
 async function result() {
 
