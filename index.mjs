@@ -4,30 +4,27 @@ import { create }  from 'express-handlebars';
 const app = express();
 const hbs = create({defaultLayout: 'main'});
 
-
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.use(express.static('public'));
 
-
 //import Handler from 'express-handlebars';
 
 app.get('/', (req, res) => {
-
   res.render('home', { layout: 'home-layout'});
 });
 
 app.get('/home', (req, res) => {
-
   res.render('home', { layout: 'home-layout'});
 });
 
 app.get('/forgot-password', (req, res) => {
-
-  res.render('forgot-password', { layout: 'home-layout'});
+  res.render('forgot-password', { layout: 'main'});
 });
+
+
 
 
 async function result() {
