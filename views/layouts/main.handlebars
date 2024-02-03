@@ -10,12 +10,12 @@
 <body>
 
   <header class="main-header">
-    <div class="logo">LogBook</div>
+    <div class="logo" onclick="backToHomePage()">LogBook</div>
     <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact-us">Contact</a>
     </nav>
   </header>
 
@@ -27,5 +27,12 @@
   
 </footer>
   
+  <script>
+    function backToHomePage() {
+      // Replace 'desired-page.html' with the actual URL of the page you want to open
+      window.location.href = '/home';
+    }
+  </script>
+
 </body>
 </html>

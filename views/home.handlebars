@@ -1,6 +1,6 @@
 <section class="home-section">
 
-  <div id="appname" style="color: green">LogBook</div>
+  <div id="appname" style="color: green" onclick="backToHomePage()">LogBook</div>
 
   <div class="container" id="login-container">
 
@@ -29,6 +29,12 @@
     </div>
   </div>
 
+  <script>
 
+function backToHomePage() {
+    // Replace 'desired-page.html' with the actual URL of the page you want to open
+    window.location.href = '/home';
+  }
+</script>
 
 </section>
