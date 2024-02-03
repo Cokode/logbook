@@ -276,7 +276,7 @@ input::placeholder {
 }
 
 #appname {
-  color: red;
+  color: green;
   font-size: 50px;
   font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
   margin-left: 14%;
@@ -367,39 +367,63 @@ input::placeholder {
   color: green;
 }
 
-/* password-reset-section */
-
+/* password-reset-section */     
 .password-reset-section {
-  background-color: white;
-  padding-top: 20px;
+  background-color: whitesmoke;
+  padding-top: 0px;
   padding-bottom: 20px;
+  margin-top: 0%;
+  margin-bottom: auto;
 }
 
 #reset-container {
-  background-color: rgb(195, 227, 200);
-  height: 400px;
-  margin-top: 10%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  background-color: rgb(220, 233, 222);
+  height: 340px;
+  margin-top: 4%;
+  padding-top: 3%;
+  padding-bottom: inherit;
+  box-shadow: 2px 2px 2px 2px rgb(142, 140, 140);
+  box-sizing: auto;
 }
 
 #inner-reset-container {
-  margin-right: 18%;
+  margin-right: 20%;
+  margin-left: 8%;
   border-radius: 10px;
   float: right;
   background-color:white;
-  height: 300px;
+  max-height: inherit;
   padding: 10px;
-  width: 400px;
+  max-width: fit-content;
+  box-sizing: border-box;
 }
 
 #reset-email {
   display: block;
   width: 250px;
+  margin-bottom: 10%;
 }
 
-#reset-div-info{
+#reset-email::placeholder {
+  font-size: 16px;
+  text-align: left;
+  font-family: Geneva, Verdana, sans-serif;
+  padding-left: 10px;
+}
+
+#reset-div-info {
   padding: 10px;
 }
+
+/* #appname-reset-page > a {
+  color: green;
+  font-size: 35px;
+  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+  margin-left: 5%;
+  float: left;
+  margin-bottom:5%;
+  text-shadow: 2px 2px 4px #b4b2b2;
+  text-decoration:none;
+} */
 
 
