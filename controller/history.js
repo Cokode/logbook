@@ -2,8 +2,6 @@ import historyTitle from "../component/historyt-title-section.js";
 
 
 export const logHistory = async () => {
-
-
     try {
       const response = await fetch('http://localhost:8080/get');
       const datat = await response.json(); // Assuming the data is in JSON format
@@ -13,7 +11,7 @@ export const logHistory = async () => {
   
       const table = document.getElementById("transaction-section");
       table.style.backgroundColor = "brown";
-//abdulm97jr
+
       const inneriew = historyTitle();
       document.getElementById("outer-section").innerHTML = inneriew;
  

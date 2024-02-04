@@ -4,30 +4,30 @@
 
   <div class="container" id="login-container">
 
-    <div class="container" id="inner-container">
-
-      <div >
-          <div id="home-statement"><h1 draggable="true">Log everything loggable, life get's easier</h1></div>
-      </div>
-
-      <div class"container=" id="login-container"> 
-        <div id="info-div">
-          <form>
-            {{!-- <label for="username">Username:</label> --}}
-            <input type="text" id="username" name="username" placeholder="Email or phone number">
-
-            {{!-- <label for="password">Password:</label> --}}
-            <input type="password" id="password" name="password" placeholder="Password">
-
-            <input type="submit" value="Log in" id="submit">
-            <hr />
-            <p id="forgot-password"><a href="/forgot-password">Forgot password?</a></p>
-          </form>
-        </div>
-      </div>
-
+  <div class="container" id="inner-container">
+    <div >
+        <div id="home-statement"><h1 draggable="true">Log everything loggable, life get's easier</h1></div>
     </div>
+
+    <div class"container=" id="login-container-two"> 
+      <div id="info-div">
+
+        <form>
+          <input type="text" id="username" name="username" placeholder="Email or phone number" autocomplete="email">
+          <input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password">
+          <input type="submit" value="Log in" id="log-in">
+          <hr />
+
+          <div >
+            <p id="forgot-password"><a href="/forgot-password">Forgot password?</a></p>
+            <p id="sign-up" ><a href="/sign-up">Sign up</a></p>
+          </div>
+        </form>
+
+      </div>
+    </div>  
   </div>
+</div>
 
   <script>
 
