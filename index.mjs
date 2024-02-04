@@ -1,5 +1,6 @@
 import express from 'express';
 import { create }  from 'express-handlebars';
+import bodyParser from 'body-parser';
 
 const app = express();
 const hbs = create({defaultLayout: 'main'});
@@ -9,6 +10,8 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.use(express.static('public'));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 //import Handler from 'express-handlebars';
 
@@ -24,10 +27,23 @@ app.get('/forgot-password', (req, res) => {
   res.render('forgot-password', { layout: 'main'});
 });
 
+app.get('/sign-up', (req, res) => {
+	res.render('sign-up', { layout: 'home-layout'});
+});
+
+app.post('/sign-up-post', (req, res) => {
+	let data = req.body;
+
+	res.send('Data Received: ' + JSON.stringify(data));
+	console.log('login sucessful!')
+
+
+});
 
 
 
-async function result() {
+
+(async function result() {
 
 	const data = await fetch('http://localhost:8080/get');
 	const response = await data.json();
@@ -36,7 +52,7 @@ async function result() {
 
 	return response;
 
-}
+})()
 
 
 
