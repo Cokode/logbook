@@ -1,0 +1,50 @@
+<div>
+  <section class="container" id="sign-up-section">
+
+    <div class="card" id="sign-up-container">
+      <form action="/sign-up-post" method="post">
+
+        <div class="container" id="sign-up-form">
+          <input type="text" id="01" name="firstName" placeholder="Firstname" required>
+          {{!-- <div class="superscript-placeholder">Placeholder</div> to be removed  --}}
+
+          <input type="text" id="01" name="middleName" placeholder="MiddleName">
+
+          <input type="text" id="01" name="lastName" placeholder="Lastname" required>
+
+          <input type="email" id="01" name="email" placeholder="Email" required>
+
+          <input type="password" id="01" name="password" placeholder="Password" autocomplete="current-password" required>
+
+          <input type="tel" id="01" name="phoneNumber" placeholder="Phone number" required>
+
+          <select id="01" name="gender" aria-placeholder="Gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+
+          <input type="number" id="01" name="age" placeholder="Age" required>
+
+          <button type="submit" id="submit-signup">Submit</button>
+
+          <hr />
+
+          <div class="card" id="signup-terms" >
+            <p>
+              By signing up, you agree to our Terms. 
+              Learn how we collect, use and share your 
+              data in our Privacy Policy and how we use cookies
+              and similar technology in our Cookies Policy.
+            </p>
+          </div>
+        </div>
+
+    </form>
+
+    </div>
+
+    
+
+  </section>  
+</div>
