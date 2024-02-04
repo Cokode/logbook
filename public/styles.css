@@ -1,5 +1,5 @@
 .main-header {
-  background-color: #000000f8;   /* 08071a8e */
+  background-color: #044a42;   /* 08071a8e */
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -18,18 +18,25 @@ body {
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #ffcc00;
+  color: #b8e1dd;
+  
+}
+
+.logo:hover {
+  font-size: 24px;
+  font-weight: bold;
+  color:#a2c11c;
 }
 
 .nav-links a {
-  color: #fff;
+  color: #b8e1dd;
   text-decoration: none;
   margin-left: 20px;
   transition: color 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-  color: #ffcc00;
+  color: #a2c11c;
 }
 
 
@@ -153,7 +160,7 @@ input {
 }
 
 input:hover {
-  background-color: #b8eccc;
+  background-color: #e2e9e4;
 }
 
 /* Styling the placeholder text */
@@ -295,28 +302,49 @@ input::placeholder {
 
 #login-container {
   padding: 10px; 
-  background-color:rgb(237, 236, 234); 
-  margin-top: 5%;
+   /* background-color:rgb(237, 236, 234); 
+ background-color:rgb(126, 89, 15);    */
+ margin-top: 5%;
   margin-right: 7%;
   width: 400px;
   float:right;
   border-radius: 7px;
-}
+} 
 
 #inner-container {
   padding-top: 15px;
   padding-left: 32px;
   padding-right: 25px;
   padding-bottom: 15px;
-  background-color: white;
+  background-color: whitesmoke;
+  /* background-color: rgb(150, 60, 60); */
   border-radius: 10px;
-  width: 380px;
+  width: 350px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   align-content: center;
 }
 
+#login-container-two { /* May be redundant */
+  /* padding-top: 15px;
+  padding-left: 32px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  background-color: white;
+  /* background-color: rgb(60, 61, 150); */
+  /* width: fit-content;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  align-content: center; */ 
+}
+
+#info-div {
+  background-color: whitesmoke;
+  padding: 10px;
+  padding-bottom: 35px;
+  border-radius: 5%;
+}
+
 #username{
-  width: 350px;
+  width: 300px;
   margin-bottom: 17px;
   display: block;
   height: 30px;
@@ -324,14 +352,14 @@ input::placeholder {
 }
 
 #username::placeholder {
-  font-size: 20px;
+  font-size: 17px;
   text-align: left;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Geneva, Verdana, sans-serif;
   padding-left: 10px;
 }
 
 #password{
-  width: 350px;
+  width: 300px;
   margin-bottom: 17px;
   display: block;
   height: 30px;
@@ -339,13 +367,13 @@ input::placeholder {
 }
 
 #password::placeholder {
-  font-size: 20px;
+  font-size: 17px;
   text-align: left;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Geneva, Verdana, sans-serif;
   padding-left: 10px;
 }
 
-#submit {
+#log-in {
   border-radius: 5px;
   width: auto;
   margin-bottom: 17px;
@@ -353,18 +381,34 @@ input::placeholder {
   width: 200px;
   background-color: green;
   color: whitesmoke;
+  border: #044a42;
+  cursor: pointer;
 }
 
-#submit:hover {
+#log-in:hover {
   background-color: rgb(45, 186, 45);
 }
 
 #forgot-password > a{
   font-family: Tahoma, Geneva, Tahoma, sans-serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
   color: green;
+  display: inline;
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+#sign-up > a {
+  font-family: Tahoma, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  font-weight: bolder;
+  text-decoration: none;
+  display:inline;
+  color: green;
+  float: left;
 }
 
 /* password-reset-section */     
@@ -392,9 +436,15 @@ input::placeholder {
   border-radius: 10px;
   float: right;
   background-color:white;
-  max-height: inherit;
+  /* max-height: inherit; */
   padding: 10px;
   max-width: fit-content;
+  max-height: fit-content;
+  box-sizing: border-box;
+}
+
+#reset-div-info {
+  background-color: #7bdef7;
   box-sizing: border-box;
 }
 
@@ -402,6 +452,7 @@ input::placeholder {
   display: block;
   width: 250px;
   margin-bottom: 10%;
+  border-radius: 2px initial;
 }
 
 #reset-email::placeholder {
@@ -409,6 +460,20 @@ input::placeholder {
   text-align: left;
   font-family: Geneva, Verdana, sans-serif;
   padding-left: 10px;
+}
+
+#reset-cancel {
+  border: none;   
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+#reset-submit {
+  border: none;   
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 10px;
 }
 
 #reset-div-info {
@@ -426,4 +491,78 @@ input::placeholder {
   text-decoration:none;
 } */
 
+
+/* CSS for sign up page */
+
+/* body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 10%;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    } */
+
+    #sign-up-container {
+      justify-content: center;
+      align-self: center;
+      display: flex;
+      padding: 0%;
+      border-color: rgb(95, 87, 87);
+    }
+
+    #sign-up-form {
+      background-color: white;
+      padding: 40px;
+      border-radius: 3px;
+      max-width: fit-content;
+      align-self: center;
+    }
+
+    #sign-up-form > input {
+      max-width: 300px;
+      display: block;
+    }
+
+    #sign-up-form > input::placeholder {
+      text-align: left;
+      font-size: 15px;
+    }
+
+    /* .superscript-placeholder {
+      position: absolute;
+      top: 5px; /* Adjust the top position to align with the input text 
+      left: 10px; /* Adjust the left position for padding 
+      font-size: 0.8em; /* Set the font size for the superscript 
+      color: #888; /* Set the color of the superscript 
+    } */
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #signup-terms {
+      box-sizing: border-box;
+      width: auto;
+    }
 
