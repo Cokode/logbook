@@ -301,7 +301,7 @@ input::placeholder {
 }
 
 #login-container {
-  padding: 10px; 
+  padding: 6px; 
    /* background-color:rgb(237, 236, 234); 
  background-color:rgb(126, 89, 15);    */
  margin-top: 5%;
@@ -312,7 +312,7 @@ input::placeholder {
 } 
 
 #inner-container {
-  padding-top: 15px;
+  padding-top: 12px;
   padding-left: 32px;
   padding-right: 25px;
   padding-bottom: 15px;
@@ -320,7 +320,8 @@ input::placeholder {
   /* background-color: rgb(150, 60, 60); */
   border-radius: 10px;
   width: 350px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  border: 0.5px solid #ccc; 
   align-content: center;
 }
 
@@ -349,6 +350,7 @@ input::placeholder {
   display: block;
   height: 30px;
   border-radius: 5px inherit;
+  border: 0.5px solid #ccc; 
 }
 
 #username::placeholder {
@@ -356,6 +358,7 @@ input::placeholder {
   text-align: left;
   font-family: Geneva, Verdana, sans-serif;
   padding-left: 10px;
+  
 }
 
 #password{
@@ -364,6 +367,7 @@ input::placeholder {
   display: block;
   height: 30px;
   border-radius: 5px inherit;
+  border: 0.5px solid #ccc; 
 }
 
 #password::placeholder {
@@ -480,55 +484,45 @@ input::placeholder {
   padding: 10px;
 }
 
-/* #appname-reset-page > a {
-  color: green;
-  font-size: 35px;
-  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
-  margin-left: 5%;
-  float: left;
-  margin-bottom:5%;
-  text-shadow: 2px 2px 4px #b4b2b2;
-  text-decoration:none;
-} */
-
-
 /* CSS for sign up page */
-
-/* body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 10%;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    } */
 
     #sign-up-container {
       justify-content: center;
       align-self: center;
-      display: flex;
       padding: 0%;
-      border-color: rgb(95, 87, 87);
+      border-color: #252323 thin;
+      border: 0.5px solid #ccc; 
+      padding: 10px;
+      border-radius: 0%;
+
     }
 
     #sign-up-form {
-      background-color: white;
+      background-color: whitesmoke;
       padding: 40px;
       border-radius: 3px;
       max-width: fit-content;
       align-self: center;
+      border-color: #252323 thin;
+      border: 0.5px solid #ccc; 
+      padding: 10px;
     }
 
     #sign-up-form > input {
-      max-width: 300px;
+      max-width: 200px;
       display: block;
+      margin-bottom: 15px;
+      font-size: 15px;
+      width: 200px;
+      border-color: #252323 thin;
+      border: 0.5px solid #ccc; 
+      padding: 10px;
     }
 
     #sign-up-form > input::placeholder {
       text-align: left;
-      font-size: 15px;
+      font-size: 13px;
+      
     }
 
     /* .superscript-placeholder {
@@ -539,16 +533,16 @@ input::placeholder {
       color: #888; /* Set the color of the superscript 
     } */
 
-    input, select {
+    #sign-up-form > select {
       width: 100%;
       padding: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 5px;
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
     }
 
-    button {
+    #sign-up-form > button {
       background-color: #4CAF50;
       color: #fff;
       padding: 10px 20px;
@@ -557,7 +551,7 @@ input::placeholder {
       cursor: pointer;
     }
 
-    button:hover {
+    #sign-up-form > button:hover {
       background-color: #45a049;
     }
 
