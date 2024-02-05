@@ -425,13 +425,13 @@ input::placeholder {
 }
 
 #reset-container {
-  background-color: rgb(220, 233, 222);
+  background-color: whitesmoke;
   height: 340px;
   margin-top: 4%;
   padding-top: 3%;
   padding-bottom: inherit;
-  box-shadow: 2px 2px 2px 2px rgb(142, 140, 140);
   box-sizing: auto;
+  border: 0.5px solid #ccc; 
 }
 
 #inner-reset-container {
@@ -448,36 +448,62 @@ input::placeholder {
 }
 
 #reset-div-info {
-  background-color: #7bdef7;
+  background-color: whitesmoke;
   box-sizing: border-box;
+  border: 0.5px solid #ccc; 
+
 }
 
 #reset-email {
   display: block;
-  width: 250px;
-  margin-bottom: 10%;
-  border-radius: 2px initial;
+  width: 417px;
+  margin-bottom: 10px;
+  border-radius: 2px ;
+  border-color: #252323 thin;
+  border: 0.5px solid #ccc;
+  padding: 7px;
+  align-self: center;
+
 }
 
+
 #reset-email::placeholder {
-  font-size: 16px;
+  font-size: 14px;
   text-align: left;
   font-family: Geneva, Verdana, sans-serif;
-  padding-left: 10px;
+}
+
+#reset-form > input:hover {
+  background-color: rgb(29, 95, 29);
 }
 
 #reset-cancel {
-  border: none;   
-  border-radius: 2px;
+  border: 0.5px solid #ccc;  
+  background-color: rgb(36, 112, 36);
+  color: whitesmoke;
+  border-radius: 4px;
+  width: 200px;
   cursor: pointer;
-  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+  font-family: Geneva, Verdana, sans-serif;
+  font-size: 14px;
 }
 
 #reset-submit {
-  border: none;   
-  border-radius: 2px;
+  border: 0.5px solid #ccc;  
+  background-color: rgb(36, 112, 36);
+  color: whitesmoke;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 200px;
   cursor: pointer;
-  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 25px;
+  font-family: Geneva, Verdana, sans-serif;
+  font-size: 14px;
 }
 
 #reset-div-info {
