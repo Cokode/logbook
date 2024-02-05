@@ -489,7 +489,6 @@ input::placeholder {
     #sign-up-container {
       justify-content: center;
       align-self: center;
-      padding: 0%;
       border-color: #252323 thin;
       border: 0.5px solid #ccc; 
       padding: 10px;
@@ -499,13 +498,14 @@ input::placeholder {
 
     #sign-up-form {
       background-color: whitesmoke;
-      padding: 40px;
+      padding-left: 27px;
+      padding-right: 10px;
+      padding-top: 18px;
       border-radius: 3px;
       max-width: fit-content;
       align-self: center;
       border-color: #252323 thin;
       border: 0.5px solid #ccc; 
-      padding: 10px;
     }
 
     #sign-up-form > input {
@@ -522,24 +522,18 @@ input::placeholder {
     #sign-up-form > input::placeholder {
       text-align: left;
       font-size: 13px;
-      
     }
 
-    /* .superscript-placeholder {
-      position: absolute;
-      top: 5px; /* Adjust the top position to align with the input text 
-      left: 10px; /* Adjust the left position for padding 
-      font-size: 0.8em; /* Set the font size for the superscript 
-      color: #888; /* Set the color of the superscript 
-    } */
-
     #sign-up-form > select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
+      max-width: 200px;
+      display: block;
+      margin-bottom: 15px;
+      font-size: 15px;
+      width: 380px;
+      border-color: #252323 thin;
+      border: 0.5px;
+      padding:10px;
+    
     }
 
     #sign-up-form > button {
@@ -556,7 +550,9 @@ input::placeholder {
     }
 
     #signup-terms {
+      color: rgb(51, 50, 50); 
       box-sizing: border-box;
       width: auto;
+      background-color: whitesmoke;
     }
 
