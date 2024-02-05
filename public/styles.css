@@ -518,7 +518,7 @@ input::placeholder {
       border-color: #252323 thin;
       border: 0.5px solid #ccc; 
       padding: 10px;
-      border-radius: 0%;
+      border-radius: 10px;
 
     }
 
@@ -527,7 +527,7 @@ input::placeholder {
       padding-left: 27px;
       padding-right: 10px;
       padding-top: 18px;
-      border-radius: 3px;
+      border-radius: 5px;
       max-width: fit-content;
       align-self: center;
       border-color: #252323 thin;
@@ -543,6 +543,7 @@ input::placeholder {
       border-color: #252323 thin;
       border: 0.5px solid #ccc; 
       padding: 10px;
+      border-radius: 10px;
     }
 
     #sign-up-form > input::placeholder {
