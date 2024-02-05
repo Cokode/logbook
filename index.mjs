@@ -34,10 +34,11 @@ app.get('/sign-up', (req, res) => {
 app.post('/sign-up-post', (req, res) => {
 	let data = req.body;
 
-	res.send('Data Received: ' + JSON.stringify(data));
+	let firstName = data.firstName;
+	let lastname = data.lastName;
+
+	res.send('Welcome : ' + firstName + " " + lastname);
 	console.log('login sucessful!')
-
-
 });
 
 
