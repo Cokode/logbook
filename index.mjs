@@ -42,8 +42,6 @@ app.post('/sign-up-post', (req, res) => {
 });
 
 
-
-
 (async function result() {
 
 	const data = await fetch('http://localhost:8080/get');

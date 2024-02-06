@@ -1,3 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: whitesmoke;
+  min-height: 100vh; /* Set minimum height to full viewport height */
+  display: flex;
+  flex-direction: column
+}
+
 .main-header {
   background-color: #044a42;   /* 08071a8e */
   padding: 20px;
@@ -5,14 +15,6 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 70px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  /* background-color:#5781b1 */
-  background-color: whitesmoke;
 }
 
 .logo {
@@ -39,350 +41,167 @@ body {
   color: #a2c11c;
 }
 
-
-/* .frame {
-background-color:#333c1f;
-margin-left: 320px;
-margin-right: 320px;
-margin-top: 130px;
-margin-bottom: 20px;
-border: 1px solid #b4c4ad;
-border-radius: 5px;
-padding-top: 2px;
-padding-bottom: 29px;
-padding-left: 2px;
-padding-right: 2px;
-text-align: center;
-font-size: large;
-line-height: 1.5;
-} */
-
-#main-section{
-  margin-bottom: 70px;
-  padding: 0px;
-}
-
-.frame:hover{
-  background-color: #a5bed999;
-  border-color: #333;
-}
-
-
-.frame {
-  width: 100%; /* Set width to 100% */
-  max-width: 600px; /* Set a maximum width if needed */
-  margin: 0 auto; /* Center the div horizontally */
-  padding: 5px;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  background-color:#b6c8dc;
-  border-radius: 12px;
-  border-color: #90c226;
-  border-width: 5550px;
-  background-blend-mode:hard-light;
-}
-  
-  /* Media query for responsiveness */ 
-  @media (max-width: 768px) {
-    .frame {
-    max-width: 100%; /* Adjust max-width for smaller screens */
-    }  
-  }
-
-.card {
-  /* float: center;
-  background-color: rgb(93, 126, 109);
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  border: 2px solid #eeebeb;
-  border-radius: 10px;
+footer {
+  background-color: whitesmoke;
+  padding: 20px;
   text-align: center;
-  padding-bottom: 20px;
-  font-family:'Arial Narrow', sans-serif ;
-  font-size: medium; */
-  width: 50%; /* Set width to 100% */
-  max-width: 300px; /* Set a maximum width if needed */
-  margin: 0 auto; /* Center the div horizontally */
-  padding: 5px;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  background-color:#020918c2;
-  box-shadow: 1px 1px 1px 2px rgba(228, 222, 222, 0.205);
-  border-radius: 8px;
-  border-color: white;
-  border-width: 4px;
-  text-align: center;
-  font-family:'Arial Narrow', sans-serif ;
-  margin-top: 45px;
-  margin-bottom: 27px;
-  color: white;
-  }
-  
-  /* Media query for responsiveness */ 
-    @media (max-width: 768px) {
-      .frame {
-      max-width: 100%; /* Adjust max-width for smaller screens */
-    }
-  }
-
-.button {
-  background-color: rgb(255, 255, 255);
-  padding: 6px;
-  border-radius: 6px;
-  margin: 6px;
-  border-color: whitesmoke;
-}
-
-#buy {
-  font-family:monospace;
-  color: green;
-  font-size: 18px;
-  font-weight:500;
-} 
-
-#sell {
-  font-family: monospace;
-  color: red;
-  font-size: 18px;
-  font-weight:500;
-} 
-
-#logbook:hover {
-  color:#ffcc00;
-}
-
-input {
-  width: 120px; /* Set the width of the input field */
-  padding: 6px; /* Set padding for better visual appearance */
-  text-align: center; /* Set text alignment to center */
-  font-size: 20px; /* Set font size */
-  margin-bottom: 55px;
-}
-
-input:hover {
-  background-color: #e2e9e4;
-}
-
-/* Styling the placeholder text */
-input::placeholder {
-  text-align: center; /* Align placeholder text to center */
-  color: #999; /* Set placeholder text color */
-  font-size: 14px; /* Set placeholder text font size */
-}
-
-.error {
-  border: 1px solid red;
-  background-color: #7bdef7;
-  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: red;
-  font-size: 16px;
-  text-decoration: wavy;
-}
-
-#history-class:hover {
-  background-color: #90c226;
-}
-
-
-.transaction-frame::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.transaction-frame {
-  border: 5px solid #333; /* Border thickness and color */
-  background-color: #f0f0f0; /* Background color */
-  padding: 10px; /* Padding to create space inside the container */
-  box-sizing: border-box; /* Include padding and border in the total width */
-}
-
-#float-box {
-  width: 30%; /* Set the width as per your requirements */
-  float: left; /* Float the divs to the left */
-  margin: 10px; /* Add some margin between the divs */
-  background-color: #e0e0e0;
-  padding: 10px;
-  box-sizing: border-box; /* Include padding and border in the total width */
-  color: green;
-  text-align: left;
-  border-radius: 5px;
-}
-
-#title-section { /*  section for history title*/
-  background-color: #dcd8c8;
-  box-sizing: border-box;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.title-frame::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.title-frame {
-  border: 2px solid #dbe4e0; /* Border thickness and color */
-  background-color: #dcd8c8; /* Background color */
-  padding: 10px; /* Padding to create space inside the container */
-  box-sizing: border-box; /* Include padding and border in the total width */
-}
-
-#float-box-frame {
-  width: 30%; /* Set the width as per your requirements */
-  float: left; /* Float the divs to the left */
-  margin: 10px; /* Add some margin between the divs */
-  background-color: #e0e0e0;
-  padding: 10px;
-  box-sizing: border-box; /* Include padding and border in the total width */
-  color: "black";
-  text-align: left;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-#history-div {
-  margin-top: 2%;
-  margin-left: 38%;
-  margin-bottom: 3%;
-}
-
-#text-wrapper {
-  border-radius: 5px;
-  padding: 0;
-}
-
-#history-text {
-  border-color: #90c226;
-  border-radius: 5px;
-}
-
-#history-text:hover {
-  border-color: #ccdea3;
-  border-radius: 5px;
-  background-color: #1a4a7e;
-}
-
-.footer {
-  background-color:white;   /* 08071a8e */
-  padding: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 100%;
+  font-size: 14px;
+  color: #333; 
   margin-bottom: 0%;
-  height: 150px;
+  clear: both;
 }
 
 
 /* CSS Style for home page / or /home */
 .home-section {
-  padding: 20px;
-
+  padding-top: 0px;
+  padding-bottom: 20px;
+  margin-top: 0%;
+  margin-bottom: auto;
+  background-color: white;
 }
+
+#login-container {
+  padding-left: 20px; 
+  padding-bottom: 2%;
+  padding-top: 5%;
+  background-color:white;
+  width: 100%;
+  height:700px;
+  max-height: 600px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} 
+
+@media (max-width: 600px) {
+  #login-container {
+    flex-direction: column; /* Change to vertical alignment when page is shrunk smaller */
+  }
+}
+  
 
 #appname {
   color: green;
   font-size: 50px;
-  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
-  margin-left: 14%;
-  float: left;
-  margin-top: 7%;
+  /* font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif; */
+  font-family: monospace; 
   text-shadow: 2px 2px 4px #b4b2b2;
+  float: right;
+}
+
+#appName-Container {
+  /* float: right; */
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  margin-top:20px;
+  box-sizing: border-box;
+  background-color: white;
+  width: 50%;
+  height: 100px;
 }
 
 #home-statement {
   color:green;
-  font: size 30px;
-  font-family:Arial, Helvetica, sans-serif; 
-  border-color:black;
-  margin-bottom: 20%;
+  font-size: 16px;
+  font-family: monospace; 
+  margin-bottom: 5px;
+  text-align: left;
+  max-width: 300px;
 }
-
-#login-container {
-  padding: 6px; 
-   /* background-color:rgb(237, 236, 234); 
- background-color:rgb(126, 89, 15);    */
- margin-top: 5%;
-  margin-right: 7%;
-  width: 400px;
-  float:right;
-  border-radius: 7px;
-} 
 
 #inner-container {
-  padding-top: 12px;
-  padding-left: 32px;
-  padding-right: 25px;
-  padding-bottom: 15px;
-  background-color: whitesmoke;
-  /* background-color: rgb(150, 60, 60); */
+  float: right;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  background-color:whitesmoke;
   border-radius: 10px;
-  width: 350px;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-  border: 0.5px solid #ccc; 
-  align-content: center;
+  max-width: 300px;
+  margin-right: 12%;
+  height: 380px;
+  max-height: 420px;
+  border: 0.5px solid #b8b1b1; 
 }
 
-#login-container-two { /* May be redundant */
-  /* padding-top: 15px;
-  padding-left: 32px;
-  padding-right: 25px;
-  padding-bottom: 15px;
-  background-color: white;
-  /* background-color: rgb(60, 61, 150); */
-  /* width: fit-content;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  align-content: center; */ 
+@media only screen and (max-with: 300px) {
+  #inner-container {
+    max-width: 100%;
+  }
 }
+
+/* #login-container-two {  May be redundant 
+  width: fit-content;
+  align-content: center;
+  background-color: red;
+} */
 
 #info-div {
   background-color: whitesmoke;
   padding: 10px;
   padding-bottom: 35px;
   border-radius: 5%;
+  max-width: 280px;
+  background-color: white;
 }
 
 #username{
-  width: 300px;
-  margin-bottom: 17px;
+  max-width: 300px;
+  width: 270px;
+  margin-bottom: 15px;
   display: block;
-  height: 30px;
-  border-radius: 5px inherit;
+  height: 25px;
+  max-height: 30px;
+  border-radius: 5px;
   border: 0.5px solid #ccc; 
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 #username::placeholder {
-  font-size: 17px;
+  font-size: 15px;
   text-align: left;
-  font-family: Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   padding-left: 10px;
-  
 }
 
-#password{
-  width: 300px;
-  margin-bottom: 17px;
+#password {
+  max-width: 300px;
+  width: 270px;
+  margin-bottom: 15px;
   display: block;
-  height: 30px;
-  border-radius: 5px inherit;
+  height: 25px;
+  max-height: 30px;
+  border-radius: 5px;
   border: 0.5px solid #ccc; 
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 #password::placeholder {
-  font-size: 17px;
+  font-size: 15px;
   text-align: left;
-  font-family: Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   padding-left: 10px;
+}
+
+#password:focus{
+  border-color: green;
+  border: 1px solid green;
 }
 
 #log-in {
   border-radius: 5px;
-  width: auto;
   margin-bottom: 17px;
-  height: 40px;
+  height:40px;
+  max-height: 60px;
   width: 200px;
+  max-width: 270px;
   background-color: green;
   color: whitesmoke;
   border: #044a42;
@@ -390,12 +209,12 @@ input::placeholder {
 }
 
 #log-in:hover {
-  background-color: rgb(45, 186, 45);
+  background-color:rgb(4, 108, 4);
 }
 
 #forgot-password > a{
   font-family: Tahoma, Geneva, Tahoma, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   text-decoration: none;
   color: green;
@@ -407,8 +226,8 @@ input::placeholder {
 
 #sign-up > a {
   font-family: Tahoma, Geneva, Tahoma, sans-serif;
-  font-size: 18px;
-  font-weight: bolder;
+  font-size: 16px;
+  /* font-weight: bolder; */
   text-decoration: none;
   display:inline;
   color: green;
@@ -417,7 +236,7 @@ input::placeholder {
 
 /* password-reset-section */     
 .password-reset-section {
-  background-color: whitesmoke;
+  background-color: white;
   padding-top: 0px;
   padding-bottom: 20px;
   margin-top: 0%;
@@ -425,13 +244,11 @@ input::placeholder {
 }
 
 #reset-container {
-  background-color: whitesmoke;
+  background-color: white;
   height: 340px;
-  margin-top: 4%;
-  padding-top: 3%;
+  padding-top: 5%;
   padding-bottom: inherit;
-  box-sizing: auto;
-  border: 0.5px solid #ccc; 
+  box-sizing: auto; 
 }
 
 #inner-reset-container {
@@ -451,59 +268,62 @@ input::placeholder {
   background-color: whitesmoke;
   box-sizing: border-box;
   border: 0.5px solid #ccc; 
-
 }
 
 #reset-email {
+  max-width: 450px;
+  width: 420px;
+  margin-bottom: 15px;
   display: block;
-  width: 417px;
-  margin-bottom: 10px;
-  border-radius: 2px ;
-  border-color: #252323 thin;
-  border: 0.5px solid #ccc;
-  padding: 7px;
-  align-self: center;
-
+  height: 25px;
+  max-height: 30px;
+  border-radius: 5px;
+  border: 0.5px solid #ccc; 
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 
 #reset-email::placeholder {
-  font-size: 14px;
+  font-size: 16px;
   text-align: left;
+  padding-left: 15px;
   font-family: Geneva, Verdana, sans-serif;
 }
 
 #reset-form > input:hover {
-  background-color: rgb(29, 95, 29);
+  background-color:rgb(4, 108, 4);
+}
+
+#reset-email:hover {
+  background-color:white;
 }
 
 #reset-cancel {
-  border: 0.5px solid #ccc;  
-  background-color: rgb(36, 112, 36);
-  color: whitesmoke;
-  border-radius: 4px;
+  border-radius: 5px;
+  margin-bottom: 17px;
+  height:40px;
+  max-height: 60px;
   width: 200px;
+  max-width: 270px;
+  background-color: green;
+  color: whitesmoke;
+  border: #044a42;
   cursor: pointer;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 10px;
-  font-family: Geneva, Verdana, sans-serif;
-  font-size: 14px;
 }
 
 #reset-submit {
-  border: 0.5px solid #ccc;  
-  background-color: rgb(36, 112, 36);
-  color: whitesmoke;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-bottom: 17px;
+  margin-right: 20px;
+  height:40px;
+  max-height: 60px;
   width: 200px;
+  max-width: 270px;
+  background-color: green;
+  color: whitesmoke;
+  border: #044a42;
   cursor: pointer;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-right: 25px;
-  font-family: Geneva, Verdana, sans-serif;
-  font-size: 14px;
 }
 
 #reset-div-info {
