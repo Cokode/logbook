@@ -31,13 +31,17 @@ app.get('/sign-up', (req, res) => {
 	res.render('sign-up', { layout: 'home-layout'});
 });
 
+app.post('/login', (req, res) => {
+	res.render('login', { layout: 'home-layout'});
+});
+
 app.post('/sign-up-post', (req, res) => {
 	let data = req.body;
 
 	let firstName = data.firstName;
 	let lastname = data.lastName;
 
-	res.send('Welcome : ' + firstName + " " + lastname);
+	res.send('Welcome to LogBook : ' + firstName + " " + lastname);
 	console.log('login sucessful!')
 });
 
@@ -54,7 +58,10 @@ app.post('/sign-up-post', (req, res) => {
 })()
 
 
-
+app.use(function(req, res) {
+	res.status(404);
+	res.render('404', {layout: 'home-layout'});
+})
 
 
  //import { changeButtonColor } from "./controller/changebuttoncolor.js";
