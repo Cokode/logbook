@@ -1,6 +1,7 @@
 import express from 'express';
 import { create }  from 'express-handlebars';
 import bodyParser from 'body-parser';
+import getFortune from './lib/fortune.js';
 
 const app = express();
 const hbs = create({defaultLayout: 'main'});
@@ -9,11 +10,10 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
-app.use(express.static('public'))
-
 app.use(express.static('public'));
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //import Handler from 'express-handlebars';
 
@@ -62,10 +62,13 @@ app.post('/sign-up-post', (req, res) => {
 
 app.use(function(req, res) {
 	res.status(404);
-	res.render('404', {layout: 'home-layout'});
+	
+	res.render('404', {layout: 'home-layout', fortune : getFortune()});
 })
 
+
 app.use(function(req, res) {
+
 	res.status(505);
 	res.render('505', {layout: 'home-layout'});
 })
