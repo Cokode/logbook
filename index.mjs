@@ -63,6 +63,13 @@ app.use(function(req, res) {
 	res.render('404', {layout: 'home-layout'});
 })
 
+app.use(function(req, res) {
+	res.status(505);
+	res.render('505', {layout: 'home-layout'});
+})
+
+
+
 
  //import { changeButtonColor } from "./controller/changebuttoncolor.js";
  //import onclickBuyButton from "./controller/inputData.js";
