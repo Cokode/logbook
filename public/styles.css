@@ -336,9 +336,12 @@ footer {
       justify-content: center;
       align-self: center;
       border-color: #252323 thin;
-      border: 0.5px solid #ccc; 
-      padding: 10px;
-      border-radius: 10px;
+      padding-top: 20px;
+      padding-left: 40%;
+      padding-right: 20%;
+      background-color: red;
+      width: 100%;
+      box-sizing: border-box;
 
     }
 
@@ -399,7 +402,8 @@ footer {
     #signup-terms {
       color: rgb(51, 50, 50); 
       box-sizing: border-box;
-      width: auto;
+      width: 250px;
       background-color: whitesmoke;
+      text-align: center;
     }
 
