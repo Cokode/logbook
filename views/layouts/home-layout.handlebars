@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LogBook</title>
-  <link rel="stylesheet" href="styles.css">
+  
+  <link rel="stylesheet" href="/styles.css">
+  {{#if showTests}}
+    <link rel="stylesheet" href="/vendor/mocha.css">
+  {{/if}}
+    <script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
   <!-- <script type="module" src="/index.mjs" defer></script> -->
 </head>
 <bod class="main-body">
@@ -17,5 +22,23 @@
   </div>
 </footer>
 
+  {{!-- Mocha test configuration  --}}
+{{#if showTests}}
+  <div id="mocha"></div>
+  <script src="/vendor/mocha.js"></script>
+  <script src="/vendor/chai.js"></script>
+  
+  <script>
+    mocha.ui('tdd');
+    var assert = chai.assert;
+  </script>
+
+  <script src="/qa/test-global.js"></script>
+    {{#if pageTestScript}}
+      <script src="{{pageTestScript}}"></script>
+    {{/if}}
+
+  <script>mocha.run();</script>
+{{/if}}
 </body>
 </html>
