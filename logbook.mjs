@@ -15,7 +15,11 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//import Handler from 'express-handlebars';
+app.use(function(req, res, next) {
+	res.locals.showTests = app.get('env') != 'production' && 
+		req.query.test === '1';
+		next();
+})
 
 app.get('/', (req, res) => {
   res.render('home', { layout: 'home-layout'});
@@ -50,12 +54,12 @@ app.post('/sign-up-post', (req, res) => {
 
 (async function result() {
 
-	const data = await fetch('http://localhost:8080/get');
-	const response = await data.json();
+	// const data = await fetch('http://localhost:8080/get');
+	// const response = await data.json();
 
-	console.log(response);
+	// console.log(response);
 
-	return response;
+	// return response;
 
 })()
 
@@ -63,7 +67,9 @@ app.post('/sign-up-post', (req, res) => {
 app.use(function(req, res) {
 	res.status(404);
 	
-	res.render('404', {layout: 'home-layout', fortune : getFortune()});
+	res.render('404', {layout: 'home-layout', fortune : getFortune(), 
+	pageTestScript : '/qa/tests-about.js'});
+	
 })
 
 

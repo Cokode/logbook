@@ -2,11 +2,11 @@
   "name": "logbook",
   "version": "1.0.0",
   "description": "A web logbook to log information like sales records.",
-  "main": "index.js",
+  "main": "logbook.mjs",
   "type": "module",
   "scripts": {
     "test": "mocha test/",
-    "start": "node index.js",
+    "start": "node logbook.mjs",
     "lint": "eslint."
   },
   "repository": {
