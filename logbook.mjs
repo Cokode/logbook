@@ -51,6 +51,11 @@ app.post('/sign-up-post', (req, res) => {
 	console.log('login sucessful!')
 });
 
+app.get('/about', (req, res) => {
+	res.render('about', { layout: 'home-layout', 
+	pageTestScript: '/qa/tests-about.js'});
+});
+
 
 (async function result() {
 
@@ -67,9 +72,7 @@ app.post('/sign-up-post', (req, res) => {
 app.use(function(req, res) {
 	res.status(404);
 	
-	res.render('404', {layout: 'home-layout', fortune : getFortune(), 
-	pageTestScript : '/qa/tests-about.js'});
-	
+	res.render('404', {layout: 'home-layout', fortune : getFortune()});
 })
 
 
