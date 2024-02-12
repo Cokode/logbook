@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import getFortune from './lib/fortune.mjs';
 import { Logs } from './component/Logs.mjs';
 import { hello } from './component/esmodule/Hello.mjs';
+import session from 'express-session';
 //import jslint from
 
 const app = express();
@@ -36,12 +37,17 @@ app.use(function(req, res, next)  {
 	next();
 });
 
+app.use(session({
+	secret: 'your-secret-key',
+	resave: false,
+	saveUninitialized: true
+}));
+
 app.get('/headers', (req, res) => {
 	res.set('Content-type', 'text/plain');
 
 	console.log(req.signedCookies);
 	var s = '';
-
 
 	for(var name in req.headers) s += name + ': ' + req.headers[name] + '\n';
 	res.send(s);
@@ -54,11 +60,11 @@ app.get('/twitter', (req, res) => {
 });
 
 app.post('/process', (req, res) => {
-console.log('Form (from querystring): ' + req.query.form);
- console.log('CSRF token (from hidden form field): ' + req.body._csrf);
- console.log('Name (from visible form field): ' + req.body.name);
- console.log('Email (from visible form field): ' + req.body.email);
- res.redirect(303, '/thank-you');
+	console.log('Form (from querystring): ' + req.query.form);
+	console.log('CSRF token (from hidden form field): ' + req.body._csrf);
+	console.log('Name (from visible form field): ' + req.body.name);
+	console.log('Email (from visible form field): ' + req.body.email);
+	res.redirect(303, '/thank-you');
 });
 
 app.get('/thank-you', (req, res) => {
@@ -71,10 +77,6 @@ app.get('/es', (req, res) => {
 	res.send('Hello welcome');
 });
 
-app.get('/home', (req, res) => {
-	res.render('thankyou', { layout: 'home-layout'});
-});
- 
 app.get('/', (req, res) => {
   res.render('home', { layout: 'home-layout'});
 });
@@ -87,10 +89,25 @@ app.get('/sign-up', (req, res) => {
 	res.render('sign-up', { layout: 'home-layout'});
 });
 
-app.post('/login', (req, res) => {
+app.post('/login', (req, res) => { 
 	console.log('I was here 303 redirect after login');
+	req.session.formSubmitted = true;
+
 	res.redirect(303, '/home');
 });
+
+app.get('/home', (req, res) => {
+	// Check if the form was successfully submitted
+	if (req.session.formSubmitted) {
+		// Render the thank you page
+			res.render('thankyou');
+		} else {
+		// Redirect user to home page or show an error page
+			console.log('redirected to home not logged in');
+			res.redirect('/');
+		}
+});
+ 
 
 app.post('/sign-up-post', (req, res) => {
 	let data = req.body;
