@@ -1,12 +1,21 @@
 import express from 'express';
-import { create }  from 'express-handlebars';
+import { create } from 'express-handlebars';
 import bodyParser from 'body-parser';
-import getFortune from './lib/fortune.js';
+import getFortune from './lib/fortune.mjs';
+import { Logs } from './component/Logs.mjs';
+import { hello } from './component/esmodule/Hello.mjs';
+//import jslint from
 
 const app = express();
-const hbs = create({defaultLayout: 'main'});
+const hbs =  create ({
+	extname: 'handlebars',
+	defaultLayout: 'main',
+	partialsDir: './views/partials', 
+});
+// const hbs = create({defaultLayout: 'main'});
 
 app.engine('handlebars', hbs.engine);
+
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
@@ -19,13 +28,54 @@ app.use(function(req, res, next) {
 	res.locals.showTests = app.get('env') != 'production' && 
 		req.query.test === '1';
 		next();
-})
+});
 
-app.get('/', (req, res) => {
-  res.render('home', { layout: 'home-layout'});
+app.use(function(req, res, next)  {
+	if(!res.locals.partials) res.locals.partials = {};
+		res.locals.partials.weather = Logs();
+	next();
+});
+
+app.get('/headers', (req, res) => {
+	res.set('Content-type', 'text/plain');
+
+	console.log(req.signedCookies);
+	var s = '';
+
+
+	for(var name in req.headers) s += name + ': ' + req.headers[name] + '\n';
+	res.send(s);
+});
+
+app.get('/twitter', (req, res) => {
+	res.render('twitter-sign-up', {
+		layout: 'home-layout', 
+		csrf: 'CSRF token goes here'});
+});
+
+app.post('/process', (req, res) => {
+console.log('Form (from querystring): ' + req.query.form);
+ console.log('CSRF token (from hidden form field): ' + req.body._csrf);
+ console.log('Name (from visible form field): ' + req.body.name);
+ console.log('Email (from visible form field): ' + req.body.email);
+ res.redirect(303, '/thank-you');
+});
+
+app.get('/thank-you', (req, res) => {
+	res.render('thankyou', {layout: false});
+});
+ 
+app.get('/es', (req, res) => {
+	hello();
+	res.set('content-type', 'text/plain');
+	res.send('Hello welcome');
 });
 
 app.get('/home', (req, res) => {
+	res.render('thankyou', { layout: 'home-layout'});
+});
+ 
+app.get('/', (req, res) => {
   res.render('home', { layout: 'home-layout'});
 });
 
@@ -38,7 +88,8 @@ app.get('/sign-up', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-	res.render('login', { layout: 'home-layout'});
+	console.log('I was here 303 redirect after login');
+	res.redirect(303, '/home');
 });
 
 app.post('/sign-up-post', (req, res) => {
@@ -48,12 +99,12 @@ app.post('/sign-up-post', (req, res) => {
 	let lastname = data.lastName;
 
 	res.send('Welcome to LogBook : ' + firstName + " " + lastname);
-	console.log('login sucessful!')
+	console.log('login sucessful!');
 });
 
 app.get('/about', (req, res) => {
 	res.render('about', { layout: 'home-layout', 
-	pageTestScript: '/qa/tests-about.js'});
+	pageTestScript: '/qa/tests-about.js', name : 'Collins'});
 });
 
 
@@ -66,21 +117,21 @@ app.get('/about', (req, res) => {
 
 	// return response;
 
-})()
+})();
 
 
-app.use(function(req, res) {
+app.use(function(req, res, next) {
 	res.status(404);
 	
 	res.render('404', {layout: 'home-layout', fortune : getFortune()});
-})
+});
 
 
-app.use(function(req, res) {
+app.use(function(err, req, res, next) {
 
-	res.status(505);
+	res.status(505); 
 	res.render('505', {layout: 'home-layout'});
-})
+});
 
 
 
