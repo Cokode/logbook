@@ -55,20 +55,22 @@
               font-size: 17px;
               "> Already have an account? 
           <a 
-          href="/home"
+          href="/"
             style="text-decoration: none;
                   color:green"
             >Log in</a></p>
       </div>
-      <form action="/sign-up-post" method="post">
+      <form action="/sign-up-process" method="post">
 
         <div class="container" id="sign-up-form">
-          <input type="text" id="01" name="firstName" placeholder="Firstname" required>
+          <input type="username" id="01" name="userName" placeholder="Username" required>
+
+          <input type="text" id="01" name="firstName" placeholder="First Name" required>
           {{!-- <div class="superscript-placeholder">Placeholder</div> to be removed  --}}
 
-          <input type="text" id="01" name="middleName" placeholder="MiddleName">
+          <input type="text" id="01" name="middleName" placeholder="Middle Name">
 
-          <input type="text" id="01" name="lastName" placeholder="Lastname" required>
+          <input type="text" id="01" name="lastName" placeholder="Last Name / Surname" required>
 
           <input type="email" id="01" name="email" placeholder="Email" required>
 
@@ -83,7 +85,7 @@
             <option value="other">Other</option>
           </select>
 
-          <input type="number" id="01" name="age" placeholder="Age" required>
+          <input type="date" id="01" name="dateOfBirth" placeholder="dateOfBirth" required>
 
           <button type="submit" id="submit-signup">Submit</button>
 

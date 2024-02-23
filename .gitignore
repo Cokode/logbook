@@ -12,6 +12,12 @@
 /.env
 /.DS_Store
 
+# cookie secrete
+credentials.mjs
+
+# url to backend
+backendUrl.mjs
+
 # logs
 *.log
 npm-debug.log*

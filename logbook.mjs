@@ -5,6 +5,14 @@ import getFortune from './lib/fortune.mjs';
 import { Logs } from './component/Logs.mjs';
 import { hello } from './component/esmodule/Hello.mjs';
 import session from 'express-session';
+import cookieParser from 'cookie-parser';
+import { credentials } from './credentials.mjs';
+import { postUser } from './component/backendCredentials/backendPostUser.mjs';
+import { url } from './component/backendCredentials/backendUrl.mjs';
+import connect from 'connect';
+import { getUserName } from './component/backendCredentials/getUserName.mjs';
+import { verifyLogin} from './component/backendCredentials/verifyLogin.mjs';
+
 //import jslint from
 
 const app = express();
@@ -37,14 +45,23 @@ app.use(function(req, res, next)  {
 	next();
 });
 
+app.use(cookieParser(credentials.cookieScrete));
+
 app.use(session({
 	secret: 'your-secret-key',
 	resave: false,
-	saveUninitialized: true
+	saveUninitialized: false
 }));
+
+app.use(function(req, res, next) {
+	res.locals.flash = req.session.flash;
+	delete req.session.flash;
+	next();
+});
 
 app.get('/headers', (req, res) => {
 	res.set('Content-type', 'text/plain');
+	res.cookie('exposed', 'no show');
 
 	console.log(req.signedCookies);
 	var s = '';
@@ -69,7 +86,8 @@ app.post('/process', (req, res) => {
 
 app.get('/thank-you', (req, res) => {
 	res.render('thankyou', {layout: false});
-});
+}
+);
  
 app.get('/es', (req, res) => {
 	hello();
@@ -78,6 +96,7 @@ app.get('/es', (req, res) => {
 });
 
 app.get('/', (req, res) => {
+	res.cookie('signed cookie', 'moi moin', {signed: true});
   res.render('home', { layout: 'home-layout'});
 });
 
@@ -89,52 +108,87 @@ app.get('/sign-up', (req, res) => {
 	res.render('sign-up', { layout: 'home-layout'});
 });
 
-app.post('/login', (req, res) => { 
-	console.log('I was here 303 redirect after login');
-	req.session.formSubmitted = true;
+app.post('/process-login', async (req, res) => { 
+	let loginDetails = req.body;
 
-	res.redirect(303, '/home');
+	try {
+    const response = await fetch((url+'verifyLogin'), {
+      method: "POST", // or 'PUT'
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginDetails),
+    });
+
+    const result = await response.json();
+		console.log(result);
+
+    if(result !== null) {
+      req.session.formSubmitted = true;
+			res.redirect(303, '/home');
+    } else {
+      console.log("failure... result is null");
+			res.render('/404', {layout: null});
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+  }
 });
 
 app.get('/home', (req, res) => {
 	// Check if the form was successfully submitted
-	if (req.session.formSubmitted) {
-		// Render the thank you page
-			res.render('thankyou');
-		} else {
-		// Redirect user to home page or show an error page
+	if (!req.session.formSubmitted) {
 			console.log('redirected to home not logged in');
 			res.redirect('/');
+		} else {
+				// Render the login page
+				res.render('login');
 		}
 });
  
+app.post('/sign-up-process', async (req, res) => {
+	const info = req.body;
+	console.log(JSON.stringify(info));
 
-app.post('/sign-up-post', (req, res) => {
-	let data = req.body;
+	try {
+		const response = await postUser(url, info);
 
-	let firstName = data.firstName;
-	let lastname = data.lastName;
+		if(!(response.ok)) {
+			console.log('User Already exist');
+			res.render('userExist');
+		} else {
+			res.redirect(303, '/thank-you');
+		}
 
-	res.send('Welcome to LogBook : ' + firstName + " " + lastname);
-	console.log('login sucessful!');
+	} catch (error) {
+			console.error('Error creating user:', error);
+	}
+
 });
+
+app.get('/getUserName', (req, res)=> {
+	try{
+		var response = getUserName(url, 'paulinus');
+		//res.type('text/plain');
+
+		console.log(JSON.stringify(response));
+
+		if(!response.ok) res.send('User not found.');
+
+		res.send('user already exist with this username');
+
+	} catch (error) {
+		console.error(error+ " went wrong");
+	}
+});
+
 
 app.get('/about', (req, res) => {
 	res.render('about', { layout: 'home-layout', 
 	pageTestScript: '/qa/tests-about.js', name : 'Collins'});
 });
-
-
-(async function result() {
-
-	// const data = await fetch('http://localhost:8080/get');
-	// const response = await data.json();
-
-	// console.log(response);
-
-	// return response;
-
-})();
 
 
 app.use(function(req, res, next) {

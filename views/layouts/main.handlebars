@@ -12,12 +12,19 @@
   <header class="main-header">
     <div class="logo" onclick="backToHomePage()">LogBook</div>
     <nav class="nav-links">
-        <a href="/home">Home</a>
+        <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/services">Services</a>
         <a href="/contact-us">Contact</a>
     </nav>
   </header>
+
+  {{#if flash}}
+      <div class="alert alert-dismissible alert-{{flash.type}}">
+        <button type="button" class="close"></button>
+        <strong>{{flash.intro}}</strong> {{{flash.message}}}
+      </div>
+  {{/if}}
 
   {{{body}}}
 
