@@ -12,6 +12,7 @@ import { url } from './component/backendCredentials/backendUrl.mjs';
 import connect from 'connect';
 import { getUserName } from './component/backendCredentials/getUserName.mjs';
 import { verifyLogin} from './component/backendCredentials/verifyLogin.mjs';
+import { populateDetails, userDetails } from './component/backendCredentials/schema.mjs';
 
 //import jslint from
 
@@ -113,7 +114,7 @@ app.post('/process-login', async (req, res) => {
 
 	try {
     const response = await fetch((url+'verifyLogin'), {
-      method: "POST", // or 'PUT'
+      method: "POST",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
@@ -122,11 +123,17 @@ app.post('/process-login', async (req, res) => {
     });
 
     const result = await response.json();
+		const info = populateDetails(result);
+		
+		res.locals.userDetails = info;
+
+		console.log(info);
 		console.log(result);
 
     if(result !== null) {
       req.session.formSubmitted = true;
 			res.redirect(303, '/home');
+
     } else {
       console.log("failure... result is null");
 			res.render('/404', {layout: null});
@@ -144,6 +151,10 @@ app.get('/home', (req, res) => {
 			res.redirect('/');
 		} else {
 				// Render the login page
+				
+			console.log("check here ");
+
+			console.log(res.locals.userDetails);
 				res.render('login');
 		}
 });
@@ -168,22 +179,6 @@ app.post('/sign-up-process', async (req, res) => {
 
 });
 
-app.get('/getUserName', (req, res)=> {
-	try{
-		var response = getUserName(url, 'paulinus');
-		//res.type('text/plain');
-
-		console.log(JSON.stringify(response));
-
-		if(!response.ok) res.send('User not found.');
-
-		res.send('user already exist with this username');
-
-	} catch (error) {
-		console.error(error+ " went wrong");
-	}
-});
-
 
 app.get('/about', (req, res) => {
 	res.render('about', { layout: 'home-layout', 
@@ -203,8 +198,6 @@ app.use(function(err, req, res, next) {
 	res.status(505); 
 	res.render('505', {layout: 'home-layout'});
 });
-
-
 
 
  //import { changeButtonColor } from "./controller/changebuttoncolor.js";
