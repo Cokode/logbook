@@ -1,6 +1,6 @@
-async function postLog (url, body, userIDOrEmail) {
+async function postLog (url, body, userIDorEmail) {
 
-  const response = await fetch((url + `addLog?email=${userIDOrEmail}`), {
+  const response = await fetch((url + "addLog?email="+userIDorEmail), {
     method : 'POST',
     headers: {
       'Content-Type': 'application/json',
