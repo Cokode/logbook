@@ -21,6 +21,8 @@ router.post('/process-login', async (req, res) => {
       req.session.isLoggedin = true;
 			req.session.user = result;
       req.session.userLogs = result.logs;
+
+      res.locals.logs = result.logs;
 			res.redirect(303, '/home');
 
     } else {
