@@ -12,6 +12,21 @@
 /.env
 /.DS_Store
 
+#Tuturials 
+verifyLogin.mjs
+twitterRoute.mjs
+processFromTuturial.mjs
+postdone.handlebars
+printHeaders.mjs
+esTest.mjs
+log.mjs
+Logs.mjs
+testing.mjs
+new-layer.handlebars
+test2.handlebars
+style.css
+loghistory.handlebars
+
 # cookie secrete
 credentials.mjs
 
