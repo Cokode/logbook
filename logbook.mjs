@@ -1,18 +1,25 @@
 import express from 'express';
 import { create } from 'express-handlebars';
 import bodyParser from 'body-parser';
-import getFortune from './lib/fortune.mjs';
 import { Logs } from './component/Logs.mjs';
-import { hello } from './component/esmodule/Hello.mjs';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import { credentials } from './credentials.mjs';
-import { postUser } from './component/backendCredentials/backendPostUser.mjs';
-import { url } from './component/backendCredentials/backendUrl.mjs';
 import connect from 'connect';
-import { getUserName } from './component/backendCredentials/getUserName.mjs';
-import { verifyLogin} from './component/backendCredentials/verifyLogin.mjs';
-import { populateDetails, userDetails } from './component/backendCredentials/schema.mjs';
+import userHomePage from './routes/userHome.mjs'
+import signUpProcess from './routes/signUpRoute.mjs'
+import postLogRoute from './routes/post_log.mjs';
+import login from './routes/login.mjs';
+import logOut from './routes/logOut.mjs';
+import testing from './routes/testing.mjs';
+import showlogs from './routes/showlogs.mjs';
+import aboutPage from './routes/aboutPage.mjs';
+import toPrintHeaders from './routes/printHeaders.mjs';
+import forgotPassword from './routes/forgotPass.mjs';
+import signUpThankYou from './routes/signUpPage.mjs';
+import siteHome from './routes/siteHome.mjs';
+import error404 from './routes/404.mjs';
+import error505 from './routes/404.mjs';
 
 //import jslint from
 
@@ -28,7 +35,6 @@ app.engine('handlebars', hbs.engine);
 
 app.set('view engine', 'handlebars');
 app.set('views', './views');
-
 app.use(express.static('public'));
 
 app.use(bodyParser.json());
@@ -51,7 +57,8 @@ app.use(cookieParser(credentials.cookieScrete));
 app.use(session({
 	secret: 'your-secret-key',
 	resave: false,
-	saveUninitialized: false
+	saveUninitialized: false,
+	cookie: {secure: false, maxAge: 6000000} 
 }));
 
 app.use(function(req, res, next) {
@@ -60,144 +67,34 @@ app.use(function(req, res, next) {
 	next();
 });
 
-app.get('/headers', (req, res) => {
-	res.set('Content-type', 'text/plain');
-	res.cookie('exposed', 'no show');
+app.use(postLogRoute);
 
-	console.log(req.signedCookies);
-	var s = '';
+app.use(toPrintHeaders);
 
-	for(var name in req.headers) s += name + ': ' + req.headers[name] + '\n';
-	res.send(s);
-});
+app.use(signUpThankYou);
 
-app.get('/twitter', (req, res) => {
-	res.render('twitter-sign-up', {
-		layout: 'home-layout', 
-		csrf: 'CSRF token goes here'});
-});
+app.use(siteHome);
 
-app.post('/process', (req, res) => {
-	console.log('Form (from querystring): ' + req.query.form);
-	console.log('CSRF token (from hidden form field): ' + req.body._csrf);
-	console.log('Name (from visible form field): ' + req.body.name);
-	console.log('Email (from visible form field): ' + req.body.email);
-	res.redirect(303, '/thank-you');
-});
+app.use(forgotPassword);
 
-app.get('/thank-you', (req, res) => {
-	res.render('thankyou', {layout: false});
-}
-);
+app.use(login);
+app.use(logOut);
+app.use(testing);
+app.use(showlogs);
+
+app.use(userHomePage);
  
-app.get('/es', (req, res) => {
-	hello();
-	res.set('content-type', 'text/plain');
-	res.send('Hello welcome');
-});
+app.use(signUpProcess);
 
-app.get('/', (req, res) => {
-	res.cookie('signed cookie', 'moi moin', {signed: true});
-  res.render('home', { layout: 'home-layout'});
-});
+app.use(aboutPage);
 
-app.get('/forgot-password', (req, res) => {
-  res.render('forgot-password', { layout: 'main'});
-});
+app.use(error404);
 
-app.get('/sign-up', (req, res) => {
-	res.render('sign-up', { layout: 'home-layout'});
-});
-
-app.post('/process-login', async (req, res) => { 
-	let loginDetails = req.body;
-
-	try {
-    const response = await fetch((url+'verifyLogin'), {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(loginDetails),
-    });
-
-    const result = await response.json();
-		const info = populateDetails(result);
-		
-		res.locals.userDetails = info;
-
-		console.log(info);
-		console.log(result);
-
-    if(result !== null) {
-      req.session.formSubmitted = true;
-			res.redirect(303, '/home');
-
-    } else {
-      console.log("failure... result is null");
-			res.render('/404', {layout: null});
-    }
-
-  } catch (error) {
-    console.error("Error:", error);
-  }
-});
-
-app.get('/home', (req, res) => {
-	// Check if the form was successfully submitted
-	if (!req.session.formSubmitted) {
-			console.log('redirected to home not logged in');
-			res.redirect('/');
-		} else {
-				// Render the login page
-				
-			console.log("check here ");
-
-			console.log(res.locals.userDetails);
-				res.render('login');
-		}
-});
- 
-app.post('/sign-up-process', async (req, res) => {
-	const info = req.body;
-	console.log(JSON.stringify(info));
-
-	try {
-		const response = await postUser(url, info);
-
-		if(!(response.ok)) {
-			console.log('User Already exist');
-			res.render('userExist');
-		} else {
-			res.redirect(303, '/thank-you');
-		}
-
-	} catch (error) {
-			console.error('Error creating user:', error);
-	}
-
-});
+app.use(error505);
 
 
-app.get('/about', (req, res) => {
-	res.render('about', { layout: 'home-layout', 
-	pageTestScript: '/qa/tests-about.js', name : 'Collins'});
-});
 
 
-app.use(function(req, res, next) {
-	res.status(404);
-	
-	res.render('404', {layout: 'home-layout', fortune : getFortune()});
-});
-
-
-app.use(function(err, req, res, next) {
-
-	res.status(505); 
-	res.render('505', {layout: 'home-layout'});
-});
 
 
  //import { changeButtonColor } from "./controller/changebuttoncolor.js";
