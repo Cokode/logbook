@@ -10,26 +10,30 @@ import { postLog } from '../component/backendCredentials/bendPostLog.mjs';
 		res.redirect(303, '/');
 	}
 
-	const useIt = req.session.user;
+	const user = req.session.user;
 	const detail = req.body;
 
 	try {
 
-		const response = await postLog(url, detail, useIt.email);
+		const response = await postLog(url, detail, user.email);
 		const result = await response.json();
 
-		if(result === null) {
-			res.send("wrong invalid");
+		if(result === null || result.status === 400) {
+      console.log('this is status code failed ' + result.status);
+      res.send("wrong invalid");
 		}
 
-    console.log('I am inside the post_log file, user is valid');
-
 		req.session.user = result;
+		req.session.userLogs = result.logs;
+
+		res.locals.logs = result.logs;
 		console.log(result);
 
-		//alert("Log added scessfully");
 		res.redirect(303, '/home');
 		
+    //res.locals.usersName = useIt.firstName;
+    //  res.render('loghistory', {layout: 'main'});
+    
 	} catch(error) {
 		console.log("h")
 	}
