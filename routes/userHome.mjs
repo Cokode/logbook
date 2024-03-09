@@ -11,7 +11,7 @@ router.get('/home', (req, res) => {
 			// console.log(req.session);
       console.log(req.session.userLogs);
       console.log("printed from userHome.js");
-			res.render('login', {user});
+			res.render('login', {user, layout: 'main',  title: 'home'});
 		}
 });
 
