@@ -1,44 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- <script type="module" src="/index.mjs" defer></script> -->
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script type="module" src="/index.mjs" defer></script> -->
+    {{!-- <script src="showFooter.mjs"></script> --}}
+  </head>
+  <body>
 
-  <header class="main-header">
-    <div class="logo" onclick="backToHomePage()">LogBook</div>
-    <nav class="nav-links">
-      <a href="/home">Home</a>
-      <a href="/pofile">Profile</a>
-      <a href="/logout">Logout</a>
-      {{!-- <a href="/services">Services</a> --}}
-      {{!-- <a href="/contact-us">Contact</a> --}}
-    </nav>
-  </header>
+    <header class="main-header">
+      <section class="nav-logo-container">
+        <div class="logo" onclick="backToHomePage()">LogBook</div>
+      </section>
+      
+      <section class="nav-container">
+        <nav class="nav-links">
+          <a href="/home">Home</a>
+          <a href="/user-profile">Profile</a>
+          <a href="/logout">Logout</a>
+          {{!-- <a href="/services">Services</a> --}}
+          {{!-- <a href="/contact-us">Contact</a> --}}
+      </nav>
+      </section>
+      
+    </header>
+    <main class="main">
+      
+    {{#if flash}}
+        <div class="alert alert-dismissible alert-{{flash.type}}">
+          <button type="button" class="close"></button>
+          <strong>{{flash.intro}}</strong> {{{flash.message}}}
+        </div>
+    {{/if}}
 
-  {{#if flash}}
-      <div class="alert alert-dismissible alert-{{flash.type}}">
-        <button type="button" class="close"></button>
-        <strong>{{flash.intro}}</strong> {{{flash.message}}}
-      </div>
-  {{/if}}
+    {{{body}}}
 
-  {{{body}}}
+    <script>
+      function backToHomePage() {
+        // Replace 'desired-page.html' with the actual URL of the page you want to open
+        window.location.href = '/home';
+      }
+    </script>
+  </main>
 
-  <script>
-    function backToHomePage() {
-      // Replace 'desired-page.html' with the actual URL of the page you want to open
-      window.location.href = '/home';
-    }
-  </script>
+    {{!-- <div style="clear: both"></div> --}}
+    <footer class="footer">
+        <p>&copy; 2024 Your Company | All Rights Reserved</p> 
+    </footer>
 
-  <footer class="footer">
-      <p>Hello I am a footer </p>  
-  </footer>
-
-</body>
+      <script src="scripts/showFooter.mjs"></script>
+  </body>
 </html>
+
