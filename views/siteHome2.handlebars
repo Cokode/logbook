@@ -1,67 +1,57 @@
 <div class="out-div">
 
-    <section class="main-div">
-        <div class="picture-div">
-          <img src="/img/dog.jpg" alt="Profile Picture" class="profile-picture">
-        </div>
-        <div class="text-div">
-          <h2>{{user.firstName}} </h2>
-        </div>
+  <section class="main-div">
+      <div class="picture-div">
+        <img src="/img/dog.jpg" alt="Profile Picture" class="profile-picture">
+      </div>
+      <div class="text-div">
+        <h2>{{user.firstName}} </h2>
+      </div>   
+  </section> 
 
-        
-    </section>
-
-    <hr class="line" style="margin: 0%; ">
+  <hr class="line" style="margin: 0%; ">
   
   <div class="main-div-two">
-    
+  
     <section class="section-1-0">
-
       <div class="input-2">
         <input type="button" value="Go back" onclick="hidelogs()">
       </div>
-       
-       
-     </section>
-
-     <section class="section-1-1" id="main-section-home">
-      <div class="section-div-1">
-       <div class="log-main">
-  <div class="log-div-title">
-
-    <div>
-      <div class="div-01">
-         <h5> date </h5>
-      </div>
-      <div class="div-01">
-         <h5> Amount </h5>
-      </div>
-      <div class="div-01">
-         <h5> logType </h5>
-      </div>
-    </div>
-  </div>
-
- 
-
-  <div class="log-div-history">
-      <hr>
-      <h4> Hello every one</h4>
-        {{#each logs}}
-            <div>
-              <h3 style="color:green">{{this.date}}   |   {{this.time}}   |   {{this.amount}}   |   {{this.logType}}</h3>
-            </div>
-        {{/each}}
-  </div>
-</div>
-
-
-        
-
-      </div>
     </section>
-    
+
+    <section class="section-1-1">
+      <div class="section-div-1">
+        <div class="log-main">
+
+          <div class="log-div-title">
+            <div class="div-01">
+              <h5> Date </h5>
+            </div>
+            <div class="div-01">
+              <h5> Amount </h5>
+            </div>
+            <div class="div-01">
+              <h5> LogType </h5>
+            </div>
+          </div>
+
+          <div class="log-div-history">
+            <hr>
+            {{#each logs}}
+              <div id="each-log-div">
+                <h3>{{this.date}} {{this.time}} </h3>
+                <h3> {{this.amount}} </h3>
+                <h3>{{this.logType}}</h3>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+    </section>
+  
   </div>
+
 </div>
 
   <script>
