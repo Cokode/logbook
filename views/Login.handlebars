@@ -1,24 +1,22 @@
 <div class="out-div">
 
-    <section class="main-div">
-        <div class="picture-div">
-          <img src="/img/dog.jpg" alt="Profile Picture" class="profile-picture">
-        </div>
-        <div class="text-div">
-          <h2>{{user.firstName}} </h2>
-        </div>
+  <section class="main-div">
+    <div class="picture-div">
+      <img src="/img/dog.jpg" alt="Profile Picture" class="profile-picture">
+    </div>
+    <div class="text-div">
+      <h2>{{user.firstName}}</h2>
+    </div>
+  </section>
 
-        
-    </section>
-
-    <hr class="line" style="margin: 0%; ">
+  <hr class="line" style="margin: 0%; ">
   
   <div class="main-div-two">
-    <section class="section-1-0">
 
-       <section class="side-section-profile">
+    <section class="section-1-0">
+      <section class="side-section-profile">
         <p style="font-family: monospace; font-size: 14px; padding-left:25px;:">Welcome {{user.firstName}} {{user.lastName}}!</p>
-       </section>
+      </section>
 
       <div class="form-div">
         <form class="form" action="/post-log" method="post">
@@ -41,27 +39,20 @@
           </div>
        </form>
       </div>
-
     </section>
 
     <section class="section-1-0">
-
       <div class="input-2">
         <input type="button" value="Show logs" onclick="showlogs()">
       </div>
-
-     </section>
-
-     <section class="section-1-1" id="main-section-home">
-      <div class="section-div-1">
-        <h3>Hello I am here {{user.firstName}}</h3>
-        
-
-      </div>
     </section>
 
-   
-    
+    {{!-- <section class="section-1-1" id="main-section-home">
+      <div class="section-div-1">
+        <h3>Hello I am here {{user.firstName}}</h3>
+      </div>
+    </section> --}}
+
   </div>
 </div>
 
