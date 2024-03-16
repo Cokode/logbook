@@ -1,23 +1,65 @@
 <div class="user-profile">
   <div>
+
     <section>
-      <h1>
-        My home profile
-      </h1>
-      <form method="post" action="/edit-profile">
-         <div class="container">
-          <h1>Update User Information</h1>
-            <form id="updateForm">
-              <label for="username">Username:</label>
-              <input type="text" id="username" name="username" required>
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" required>
-              <button type="submit">Update</button>
-            </form>
-          </div>
-      </form>
+      <div>
+        <h2>Profile Information</h2>
+      </div>
+      <div style="background-color: white; height:100px">
+        <div style="background-color: whitesmoke;">
+          <p>Names: {{user.firstName}} {{user.middleName}} {{user.lastName}}</p>
+          <p>Email: {{user.email}}</p>
+          <p>Phone Number: {{user.phoneNumber}}</p>
+          <p>DOB: {{user.dateOfBirth}}</p>
+        </div>
+      </div>
+
+      <div> 
+        <button type="menu" onclick="putUpdate()">Edit profile Information</button>
+      </div>
+
     </section>
+
   </div>
+
+  {{#if editProfile}}
+      <section class="form-section">
+        <form method="post" action="/edit-profile">
+          <div class="container">
+            <h1>Update User Information</h1>
+              <form id="updateForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="number">Phone Number:</label>
+                <input type="number" id="number" name="phoneNumber" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Update</button>
+              </form>
+          </div>
+        </form>
+      </section>
+
+      {{!-- {{ form method="post" action="/edit-profile"></form>}} --}}
+    {{/if}}
 </div>
+
+<script>
+
+  function putUpdate() {
+    fetch('/set-edit-profile', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ editProfile: true })
+    }).then(() => {
+      window.location.href = '/user-profile';
+  }).catch(error => {
+    console.error('Error setting editProfile:', error);
+  });
+
+  };
+</script>
