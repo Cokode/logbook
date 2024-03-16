@@ -17,6 +17,8 @@ import aboutPage from './routes/aboutPage.mjs';
 import toPrintHeaders from './routes/printHeaders.mjs';
 import forgotPassword from './routes/forgotPass.mjs';
 import signUpThankYou from './routes/signUpPage.mjs';
+import profile from './routes/userProfile.mjs';
+import editProfile from './routes/edit-profile.mjs';
 import siteHome from './routes/siteHome.mjs';
 import error404 from './routes/404.mjs';
 import error505 from './routes/404.mjs';
@@ -85,6 +87,8 @@ app.use(showlogs);
 app.use(userHomePage);
  
 app.use(signUpProcess);
+app.use(profile);
+app.use(editProfile);
 
 app.use(aboutPage);
 
