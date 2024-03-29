@@ -13,7 +13,7 @@ router.post('/sign-up-process', async (req, res) => {
 		if(!(response.ok)) {
 			res.render('userExist');
 		} else {
-			res.redirect(303, '/thank-you');
+			res.render('thankyou', {layout: 'home-layout'});
 		}
 
 	} catch (error) {
