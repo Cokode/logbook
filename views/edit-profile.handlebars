@@ -1,0 +1,39 @@
+{{!-- <div class="user-profile"> --}}
+
+<div class="user-2">
+  <form method="post" action="/update-profile">
+    <div class="container">
+      <h2>Update User Information</h2>
+        <form id="updateForm">
+          <label for="username">Username:</label>
+          <input type="text" id="u-2" value={{user.userName}} name="username" autocomplete="off">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="f-2" value={{user.firstName}} name="firstName" required>
+          <label for="middleName">Middle Name:</label>
+          <input type="text" id="m-2" value={{user.middleName}} value="Collins" name="middleName" required>
+          <label for="lastName">last Name:</label>
+          <input type="text" value={{user.lastName}} id="l-2" name="lastName" required>
+          <label for="email">Email:</label>
+          <input type="email" value={{user.email}} id="e-2" name="email" required>
+          <label for="number">Phone Number:</label>
+          <input type="text" value={{user.phoneNumber}} id="n-2" name="phoneNumber" required>
+          <label for="password">Password:</label>
+          <input type="password" value={{user.password}} id="p-2" name="password" required>
+          <button type="submit" id="update-button" >Update</button>
+        </form>
+    </div>
+  </form>
+</div>
+
+{{!-- 
+<script>
+  function updateProfile() {
+    fetch('update-profile', {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json',
+      }
+
+    })
+  }
+</script> --}}
