@@ -5,7 +5,7 @@ import { Logs } from './component/Logs.mjs';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import { credentials } from './credentials.mjs';
-import connect from 'connect';
+// import connect from 'connect';
 import userHomePage from './routes/userHome.mjs'
 import signUpProcess from './routes/signUpRoute.mjs'
 import postLogRoute from './routes/post_log.mjs';
@@ -19,6 +19,7 @@ import forgotPassword from './routes/forgotPass.mjs';
 import signUpThankYou from './routes/signUpPage.mjs';
 import profile from './routes/userProfile.mjs';
 import editProfile from './routes/edit-profile.mjs';
+import updateProfile from './routes/updateProfile.mjs';
 import siteHome from './routes/siteHome.mjs';
 import error404 from './routes/404.mjs';
 import error505 from './routes/404.mjs';
@@ -78,7 +79,7 @@ app.use(signUpThankYou);
 app.use(siteHome);
 
 app.use(forgotPassword);
-
+app.use(updateProfile) // here 
 app.use(login);
 app.use(logOut);
 app.use(testing);
