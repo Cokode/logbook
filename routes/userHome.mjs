@@ -7,10 +7,8 @@ router.get('/home', (req, res) => {
 	if (!req.session.isLoggedin) {
 			res.redirect('/');
 		} else {
-
-			// console.log(req.session);
       console.log(req.session.userLogs);
-      console.log("printed from userHome.js");
+      console.log("printed from userHome.mjs");
 			res.render('login', {user, layout: 'main',  title: 'home'});
 		}
 });
