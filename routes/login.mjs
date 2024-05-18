@@ -26,8 +26,8 @@ router.post('/process-login', async (req, res) => {
 			res.redirect(303, '/home');
 
     } else {
-      console.log("failure... result is null");
-			res.render('404', {layout: null});
+      console.log("unsucessful login attempt");
+      res.redirect(303, '/');
     }
 
   } catch (error) {
