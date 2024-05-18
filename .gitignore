@@ -26,6 +26,7 @@ new-layer.handlebars
 test2.handlebars
 style.css
 loghistory.handlebars
+typeS.ts
 
 # cookie secrete
 credentials.mjs
