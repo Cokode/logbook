@@ -31,7 +31,7 @@ router.post('/process-login', async (req, res) => {
     }
 
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Server can't be reached", error);
   }
 });
 
