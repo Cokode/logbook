@@ -1,0 +1,108 @@
+<div>
+  <section class="container" id="sign-up-section">
+
+    <div class="card" id="sign-up-container" style="background-color: whitesmoke;">
+
+      <div>
+        <h1 
+          id="appName-sign-up" 
+          class="font-mono"
+            style="color: green; 
+                  font-size: 30px; 
+                  font-family: ui-monospace, 
+                    SFMono-Regular, 
+                    Menlo, 
+                    Monaco, 
+                    Consolas, 
+                    "Liberation Mono", 
+                    "Courier New",
+                     monospace;
+                  padding-bottom:20px;
+                  margin: bottom 20px;
+                  margin-right: 20px;
+                  margin-left: 20px;
+                  text-shadow: 2px 2px 4px #b4b2b2;"
+                  >LogBook
+        </h1>
+      </div>
+
+      <div >
+        <p 
+        style="color: rgb(51, 50, 50); 
+              font-family: ui-monospace, 
+                    SFMono-Regular, 
+                    Menlo, 
+                    Monaco, 
+                    Consolas, 
+                    "Liberation Mono", 
+                    "Courier New",
+                     monospace;
+              font-size: 17px;
+              ">Sign up to create a free account</p>
+      </div>
+
+      <div>
+        <p
+        style="color: rgb(51, 50, 50); 
+              font-family: ui-monospace, 
+                    SFMono-Regular, 
+                    Menlo, 
+                    Monaco, 
+                    Consolas, 
+                    "Liberation Mono", 
+                    "Courier New",
+                     monospace;
+              font-size: 17px;
+              "> Already have an account? 
+          <a 
+          href="/"
+            style="text-decoration: none;
+                  color:green"
+            >Log in</a></p>
+      </div>
+      <form action="/sign-up-process" method="post">
+
+        <div class="container" id="sign-up-form">
+          <input type="username" id="01" name="userName" placeholder="Username" required>
+
+          <input type="text" id="01" name="firstName" placeholder="First Name" required>
+          {{!-- <div class="superscript-placeholder">Placeholder</div> to be removed  --}}
+
+          <input type="text" id="01" name="middleName" placeholder="Middle Name">
+
+          <input type="text" id="01" name="lastName" placeholder="Last Name / Surname" required>
+
+          <input type="email" id="01" name="email" placeholder="Email" required>
+
+          <input type="password" id="01" name="password" placeholder="Password" autocomplete="current-password" required>
+
+          <input type="tel" id="01" name="phoneNumber" placeholder="Phone number" required>
+
+          <select id="01" name="gender" aria-placeholder="Gender" required>
+            <option value="male">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+
+          <input type="date" id="01" name="dateOfBirth" placeholder="dateOfBirth" required>
+
+          <button type="submit" id="submit-signup">Submit</button>
+
+          <hr />
+
+          <div class="card" id="signup-terms" >
+            <p>
+              By signing up, you agree to our Terms. 
+              Learn how we collect, use and share your 
+              data in our Privacy Policy and how we use cookies
+              and similar technology in our Cookies Policy.
+            </p>
+          </div>
+        </div>
+
+    </form>
+
+    </div>
+  </section>  
+</div>

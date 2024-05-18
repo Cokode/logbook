@@ -1,0 +1,40 @@
+{{!-- <div class="user-profile"> --}}
+  <div class="homepageTest-couple  mango-reg-cta">
+  <div class="user-1">
+
+    <section class="u-p1">
+      <div> 
+        <h2>Profile Information</h2>
+      </div>
+      <div class="">
+        <div class="info-div">
+          <p><span> Username:</span> {{user.userName}}</p>
+          <p><span>Name(s):</span> {{user.firstName}} {{user.middleName}} {{user.lastName}}</p>
+          <p><span>Email:</span> {{user.email}}</p>
+          <p><span>Phone Number:</span> {{user.phoneNumber}}</p>
+          <p><span>DOB:</span> {{user.dateOfBirth}}</p>
+        </div>
+      </div>
+
+      <div> 
+        <button type="button" onclick="editProfile()">Edit profile Information</button>
+      </div>
+      <div> 
+        <button type="button" onclick="backToHome()">return back to home</button>
+      </div>
+
+    </section>
+  </div>
+
+
+{{!-- <script type="module" src="/public/scripts/validateForm.mjs"></script> --}}
+  <script> 
+    function backToHome() {
+      window.location.href = '/home';
+    }
+
+    function editProfile() {
+       window.location.href = '/edit-profile';
+    }
+  </script>
+</div>
