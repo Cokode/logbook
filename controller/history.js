@@ -40,10 +40,7 @@ export const logHistory = async () => {
         amount.style.color = "red";
        }
        
-
-      
-
-       title_frame.append(date_time, type, amount);
+        title_frame.append(date_time, type, amount);
 
        table.append(title_frame);
   
