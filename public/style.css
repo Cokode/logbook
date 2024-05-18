@@ -1,0 +1,78 @@
+/* Reset default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* background-color: #333; */
+}
+
+/* Apply styles to the container */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+/* Apply styles to header */
+header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: green; 
+  width: 100%;
+}
+
+/* Apply styles to navigation */
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Apply styles to hero section */
+.hero {
+  text-align: center;
+  padding: 50px 0 10px 10px;
+}
+
+/* Apply styles to features section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 30px 10px 20px;
+  background-color: antiquewhite;
+}
+
+.feature {
+  flex: 0 0 30%; /* Adjust width as needed */
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  background-color: aqua;
+}
+
+/* Apply styles to testimonial section */
+.testimonial {
+  text-align: center;
+  padding: 50px 0;
+  background-color: aquamarine;
+}
+
+.quote {
+  margin-bottom: 20px;
+}
+
+/* Apply styles to footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
