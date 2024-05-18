@@ -670,17 +670,6 @@ footer {
   width: 120px ;
 }
 
-.user-profile {
-  display: flex;
-  flex: 0 40%;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: whitesmoke;
-  padding: 20px;
-  margin-bottom: 10%;
-  /* margin-bottom: 1px; */
-}
-
 .user-1 {
   /* display: flex; */
   background-color: white;
@@ -693,14 +682,12 @@ footer {
 }
 
 .user-2 {
-  /* display: flex; */
+  display: flex;
   background-color: white;
   padding: 10px;
-  max-width: 600px;
-  border: 0.5px solid #252323;
-  border-radius: 10px;
-  margin: 2px;
-
+  border: 0.5px thin #252323;
+  border-radius: 0px;
+  margin: 0px;
 }
 
 .info-div {
@@ -731,10 +718,10 @@ footer {
 }
 
 .container {
-  background-color: red;
+  background-color: whitesmoke;
   padding:10px;
   box-sizing: border-box;
-  flex-direction: row;
+  border: 0.5px solid #474545;
 }
 
 #updateForm > input {
