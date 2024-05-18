@@ -1,15 +1,14 @@
 import express from 'express';
 const router = express.Router();
 
-router.post('/set-edit-profile', (req, res) => {
+router.get('/edit-profile', (req, res) => {
+  const user = req.session.user;
 
-  if(req.session.isLoggedin){
-    req.session.editProfile = req.body.editProfile;
-    res.sendStatus(200);
-  } else {
+  if(!req.session.isLoggedin){
     res.redirect(303, '/');
   }
 
+  res.render('edit-profile', {layout: 'main', user});
 });
 
 export default router;
